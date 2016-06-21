@@ -1,5 +1,7 @@
 PODS:
-  - TwilioLookup (0.1.0)
+  - Alamofire (3.4.1)
+  - TwilioLookup (0.1.0):
+    - Alamofire
 
 DEPENDENCIES:
   - TwilioLookup (from `../`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TwilioLookup: bcda534c944b64fb935d8a23d89c3fd087248e5f
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  TwilioLookup: b132eaaa9a5b281458f0082e8710f92704edbe61
 
 PODFILE CHECKSUM: 5daf46b13c998a94bf2c29d1482ae19feaa6fa34
 
