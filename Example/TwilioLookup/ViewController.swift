@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var phoneTextField: UITextField?
+    
+    @IBAction func verifyPhoneNumber(sender: AnyObject) {
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

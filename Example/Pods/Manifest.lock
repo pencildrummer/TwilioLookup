@@ -1,7 +1,12 @@
 PODS:
   - Alamofire (3.4.1)
+  - AlamofireObjectMapper (3.0.0):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - ObjectMapper (1.3.0)
   - TwilioLookup (0.1.0):
     - Alamofire
+    - AlamofireObjectMapper (~> 3.0)
 
 DEPENDENCIES:
   - TwilioLookup (from `../`)
@@ -12,7 +17,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  TwilioLookup: b132eaaa9a5b281458f0082e8710f92704edbe61
+  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
+  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
+  TwilioLookup: ac48d693802d4f71997b64f292717e59794d456b
 
 PODFILE CHECKSUM: 5daf46b13c998a94bf2c29d1482ae19feaa6fa34
 

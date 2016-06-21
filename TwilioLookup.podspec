@@ -33,5 +33,6 @@ TODO: Add long description of the pod here.
   s.source_files = 'TwilioLookup/Classes/**/*'
 
   s.dependency 'Alamofire'
+  s.dependency 'AlamofireObjectMapper', '~> 3.0'
 
 end

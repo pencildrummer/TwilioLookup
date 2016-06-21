@@ -22,6 +22,9 @@
   "dependencies": {
     "Alamofire": [
 
+    ],
+    "AlamofireObjectMapper": [
+      "~> 3.0"
     ]
   }
 }
