@@ -1,0 +1,14 @@
+module: TwilioLookup
+author: Fabio Borella
+author_url: http://pencildrummer.com
+github_url: https://github.com/pencildrumer/TwilioLookup
+copyright: 2016 © Fabio Borella - Pencildrummer
+
+clean: false
+min_acl: public
+skip_undocumented: true
+readme: ./README.md
+
+#docset_icon: Docs/icon.png
+#docset_path: Docs
+#documentation: Docs/*.md

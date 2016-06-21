@@ -11,16 +11,44 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
+/**
+ Class used to lookup phone number using the Lookup feature of Twilio.
+ 
+ To use TwilioLookup methods you need to set the `accountSid` and `accountToken` found in the Twilio console dashboard ([Twilio dashboard][https://www.twilio.com/console/sms/dashboard]).
+ */
 public class TwilioLookup {
     
     public static let sharedInstance = TwilioLookup()
     
+    /**
+     The account SID of your account.
+     
+     You can find your account SID value in the [Twilio dashboard][https://www.twilio.com/console/sms/dashboard]
+     */
     public var accountSid: String?
+    
+    /**
+     The account Token of your account.
+     
+     You can find your account Token value in the [Twilio dashboard][https://www.twilio.com/console/sms/dashboard]
+     */
     public var accountToken: String?
     
+    /**
+     Use this method to lookup on Twilio for a certain phone number. You can also pass the country ISO code and the type.
+     
+     - parameter phoneNumber: The phone number to lookup
+     - parameter countryCode: Optional [ISO country code][https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2] of the phone number. This is used to specify the country when the number is provided in a national format.
+     - parameter type: Indicates the type of information you would like returned with your request. Possible values are `carrier` or `caller-name`. If not specified, the default is nil. This properties is available only on paid accounts.
+     - parameter completion: The closure the be executed when the request is finished.
+     
+     - seealso: TwilioLookupResponse
+     */
     public class func lookup(phoneNumber: String, countryCode: String? = nil, type: String? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, completion: completion)
     }
+    
+    // MARK: - Private implementations
     
     private func lookup(phoneNumber: String, countryCode: String?, type: String?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         
@@ -55,65 +83,5 @@ public class TwilioLookup {
     }
     
     
-    
-}
-
-public class TwilioLookupResponse: NSObject, Mappable {
-    
-    var callerName: String?
-    var countryCode: String!
-    var phoneNumber: String!
-    var nationalFormat: String!
-    var carrier: String?
-    var addons: [AnyObject]?
-    
-    // Mappable
-    
-    required public init?(_ map: Map) {
-        
-    }
-    
-    public func mapping(map: Map) {
-        callerName <- map["caller_name"]
-        countryCode <- map["country_code"]
-        phoneNumber <- map["phone_number"]
-        nationalFormat <- map["national_format"]
-        carrier <- map["carrier"]
-        addons <- map["addons"]
-    }
-    
-}
-
-let kTwilioErrorDomain = "com.pencildrummer.TwilioErrorDomain"
-
-public class TwilioError: NSError, Mappable {
-    
-    public var twilioCode: UInt!
-    private var twilioDescription: String!
-    public var moreInfoDescription: String!
-    public var status: UInt!
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    required public init?(_ map: Map) {
-        super.init(domain: kTwilioErrorDomain,
-                   code: map.JSONDictionary["code"] as! Int,
-                   userInfo: [
-                    NSLocalizedDescriptionKey : map.JSONDictionary["message"] as! String
-            ])
-    }
-    
-    public func mapping(map: Map) {
-        twilioCode <- map["code"]
-        twilioDescription <- map["message"]
-        moreInfoDescription <- map["more_info"]
-        status <- map["status"]
-    }
-    
-    public override var localizedDescription: String {
-        return twilioDescription
-    }
     
 }
