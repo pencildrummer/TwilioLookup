@@ -8,7 +8,7 @@
 
 import Alamofire
 
-enum TwilioLookupRouter: URLRequestConvertible {
+internal enum TwilioLookupRouter: URLRequestConvertible {
     
     private static let baseURL = "https://lookups.twilio.com/v1/"
     
