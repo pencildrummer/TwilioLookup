@@ -12,3 +12,10 @@ readme: ./README.md
 #docset_icon: Docs/icon.png
 #docset_path: Docs
 #documentation: Docs/*.md
+
+custom_categories:
+  - name: Classes
+    children:
+    - TwilioLookup
+    - TwilioLookupResponse
+    - TwilioError

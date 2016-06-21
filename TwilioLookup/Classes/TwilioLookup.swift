@@ -20,6 +20,8 @@ public class TwilioLookup {
     
     public static let sharedInstance = TwilioLookup()
     
+    // MARK: - Settings
+    
     /**
      The account SID of your account.
      
@@ -33,6 +35,8 @@ public class TwilioLookup {
      You can find your account Token value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
     public var accountToken: String?
+    
+    // MARK: - Methods
     
     /**
      Use this method to lookup on Twilio for a certain phone number. You can also pass the country ISO code and the type.
