@@ -1,0 +1,6 @@
+framework module Pods_TwilioLookup_Tests {
+  umbrella header "Pods-TwilioLookup_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

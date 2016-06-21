@@ -1,0 +1,16 @@
+PODS:
+  - TwilioLookup (0.1.0)
+
+DEPENDENCIES:
+  - TwilioLookup (from `../`)
+
+EXTERNAL SOURCES:
+  TwilioLookup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TwilioLookup: bcda534c944b64fb935d8a23d89c3fd087248e5f
+
+PODFILE CHECKSUM: 5daf46b13c998a94bf2c29d1482ae19feaa6fa34
+
+COCOAPODS: 1.0.1

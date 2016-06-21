@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		382E7F65AEBBFE39F2F707D604096122 /* TwilioLookup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDE874637B63D38D61348B779A3F5BA /* TwilioLookup-dummy.m */; };
+		3D16B1DD67C7DC85475BF645C59361D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5CEBED3BD4DB470763A3B12EA431BE32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		6E5E2A560A31DFD47BBBBDD9B2929ADD /* Pods-TwilioLookup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EAECF8EF6E6DA2C5AD956EAF699B08 /* Pods-TwilioLookup_Example-dummy.m */; };
+		8D388AAB10CB66FA35B1996F3B3175D1 /* Pods-TwilioLookup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B27662314408BEC9612666DB1D881459 /* Pods-TwilioLookup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93439F3FFCDC42156EEF462E559C5FB9 /* Pods-TwilioLookup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D30F5E8C17919993CF98538024569430 /* Pods-TwilioLookup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF38F893385D57A3F24BC2A673E2B972 /* Pods-TwilioLookup_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAB0E890DFD96E2DEF11FDD5D8E86D4 /* Pods-TwilioLookup_Tests-dummy.m */; };
+		DD71F113F67416ED9506017D1B5C05C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E471B34FFBFF4FFBF87C6C513D79710C /* TwilioLookup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D79E8E77AFBC8586A3E612ABFA3D3D4 /* TwilioLookup-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA8CBE6BB8D1784DE5A5758C30F73C6A /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B324D10DF77F6060B0B89D2E14CBBE89 /* ReplaceMe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7DE1279FED0E44BFD364835EBAA90474 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10F5D2906E5213CFB06E0E4CACC5C32;
+			remoteInfo = TwilioLookup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		068EAAE995FCE3ADAA6A657225669688 /* TwilioLookup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TwilioLookup-prefix.pch"; sourceTree = "<group>"; };
+		0EC0B019DB1B991A575BF9BD4F937355 /* Pods-TwilioLookup_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TwilioLookup_Tests-resources.sh"; sourceTree = "<group>"; };
+		15EAECF8EF6E6DA2C5AD956EAF699B08 /* Pods-TwilioLookup_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TwilioLookup_Example-dummy.m"; sourceTree = "<group>"; };
+		2117C5CAAC84B460AE8CAC4EEBA0B512 /* Pods_TwilioLookup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwilioLookup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D69E6D0592948C64915DEEF0C02108F /* Pods-TwilioLookup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TwilioLookup_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3D79E8E77AFBC8586A3E612ABFA3D3D4 /* TwilioLookup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TwilioLookup-umbrella.h"; sourceTree = "<group>"; };
+		44AC0AD3E8A0C1A09AFD0C3DFAF9ACCA /* Pods_TwilioLookup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwilioLookup_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CA60F2A20CF732F7FC310DE2E5C97B8 /* Pods-TwilioLookup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TwilioLookup_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5E350A7B8F8FF00D630225398A8DA35F /* Pods-TwilioLookup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TwilioLookup_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7C471220D0837F83A571DC1E4558C672 /* Pods-TwilioLookup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TwilioLookup_Example-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		99DAC741FB8CD36EC9D3F222ACB37F5A /* TwilioLookup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TwilioLookup.modulemap; sourceTree = "<group>"; };
+		9AAB0E890DFD96E2DEF11FDD5D8E86D4 /* Pods-TwilioLookup_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TwilioLookup_Tests-dummy.m"; sourceTree = "<group>"; };
+		A5506F3E452ED67A6217080D17BBE16D /* Pods-TwilioLookup_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TwilioLookup_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A5DF2E64987227DF5FA5DAE2CDCF443B /* Pods-TwilioLookup_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TwilioLookup_Example-resources.sh"; sourceTree = "<group>"; };
+		A6E5695A3DD5BF9F8743F6C2D79E5D4C /* Pods-TwilioLookup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TwilioLookup_Example.modulemap"; sourceTree = "<group>"; };
+		A7A19E2273F5BB17CF668580DB3389FC /* Pods-TwilioLookup_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TwilioLookup_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A9E1A15C42F8029C4E7AF7881F79FB9B /* Pods-TwilioLookup_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TwilioLookup_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		ABC441AD1AED9D8F97D0D69B4D099ED9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABDE874637B63D38D61348B779A3F5BA /* TwilioLookup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TwilioLookup-dummy.m"; sourceTree = "<group>"; };
+		B22F98860437CE9C7C43260BCE2450C9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B27662314408BEC9612666DB1D881459 /* Pods-TwilioLookup_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TwilioLookup_Example-umbrella.h"; sourceTree = "<group>"; };
+		B324D10DF77F6060B0B89D2E14CBBE89 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		C2A703B9270F2F4844A675809E786BCF /* TwilioLookup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TwilioLookup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C32C80D70F07B47B0BBA0598A9A637D7 /* Pods-TwilioLookup_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-TwilioLookup_Tests.modulemap"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D30F5E8C17919993CF98538024569430 /* Pods-TwilioLookup_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TwilioLookup_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D635B2A410F9467F7F144B1A720F7DF5 /* Pods-TwilioLookup_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TwilioLookup_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		D9E1AC9AD439B6860173CB479D7F10EE /* TwilioLookup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TwilioLookup.xcconfig; sourceTree = "<group>"; };
+		DF51CD8140BBE55E4F41613AE9D4A2A2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E87BD3AB838C041561B1DA2C89592040 /* Pods-TwilioLookup_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TwilioLookup_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E8AD1CBF5DF5CDE45C9177E274793BFD /* Pods-TwilioLookup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TwilioLookup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0676F61434747165E267DA6348860AC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD71F113F67416ED9506017D1B5C05C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B12798D54B703EB04115ACD30393712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D16B1DD67C7DC85475BF645C59361D8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E076DC5DDE110C3FC97E5F8E39138DE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CEBED3BD4DB470763A3B12EA431BE32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F74F1AEAD7C8235D036FB294813BF9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49E35698397983FC1BB448633916823F /* Pods-TwilioLookup_Example */,
+				47CC4725A697854F8756E7E560667AA0 /* Pods-TwilioLookup_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		16E53DBAEB3D59FB1EBB4EBCC712F682 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B324D10DF77F6060B0B89D2E14CBBE89 /* ReplaceMe.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		216CCEA29B7C26B6FC6A0D5862A8E792 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF51CD8140BBE55E4F41613AE9D4A2A2 /* Info.plist */,
+				99DAC741FB8CD36EC9D3F222ACB37F5A /* TwilioLookup.modulemap */,
+				D9E1AC9AD439B6860173CB479D7F10EE /* TwilioLookup.xcconfig */,
+				ABDE874637B63D38D61348B779A3F5BA /* TwilioLookup-dummy.m */,
+				068EAAE995FCE3ADAA6A657225669688 /* TwilioLookup-prefix.pch */,
+				3D79E8E77AFBC8586A3E612ABFA3D3D4 /* TwilioLookup-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TwilioLookup";
+			sourceTree = "<group>";
+		};
+		2F73A79D294A8103379E32050D4E93ED /* TwilioLookup */ = {
+			isa = PBXGroup;
+			children = (
+				216CCEA29B7C26B6FC6A0D5862A8E792 /* Support Files */,
+				9F32157A0C88C2CDD61BFF46D7E92625 /* TwilioLookup */,
+			);
+			name = TwilioLookup;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		30DE2862B7598BED0D54EF298A61429F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F73A79D294A8103379E32050D4E93ED /* TwilioLookup */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		47CC4725A697854F8756E7E560667AA0 /* Pods-TwilioLookup_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B22F98860437CE9C7C43260BCE2450C9 /* Info.plist */,
+				C32C80D70F07B47B0BBA0598A9A637D7 /* Pods-TwilioLookup_Tests.modulemap */,
+				A7A19E2273F5BB17CF668580DB3389FC /* Pods-TwilioLookup_Tests-acknowledgements.markdown */,
+				E87BD3AB838C041561B1DA2C89592040 /* Pods-TwilioLookup_Tests-acknowledgements.plist */,
+				9AAB0E890DFD96E2DEF11FDD5D8E86D4 /* Pods-TwilioLookup_Tests-dummy.m */,
+				D635B2A410F9467F7F144B1A720F7DF5 /* Pods-TwilioLookup_Tests-frameworks.sh */,
+				0EC0B019DB1B991A575BF9BD4F937355 /* Pods-TwilioLookup_Tests-resources.sh */,
+				D30F5E8C17919993CF98538024569430 /* Pods-TwilioLookup_Tests-umbrella.h */,
+				E8AD1CBF5DF5CDE45C9177E274793BFD /* Pods-TwilioLookup_Tests.debug.xcconfig */,
+				5CA60F2A20CF732F7FC310DE2E5C97B8 /* Pods-TwilioLookup_Tests.release.xcconfig */,
+			);
+			name = "Pods-TwilioLookup_Tests";
+			path = "Target Support Files/Pods-TwilioLookup_Tests";
+			sourceTree = "<group>";
+		};
+		49E35698397983FC1BB448633916823F /* Pods-TwilioLookup_Example */ = {
+			isa = PBXGroup;
+			children = (
+				ABC441AD1AED9D8F97D0D69B4D099ED9 /* Info.plist */,
+				A6E5695A3DD5BF9F8743F6C2D79E5D4C /* Pods-TwilioLookup_Example.modulemap */,
+				A5506F3E452ED67A6217080D17BBE16D /* Pods-TwilioLookup_Example-acknowledgements.markdown */,
+				A9E1A15C42F8029C4E7AF7881F79FB9B /* Pods-TwilioLookup_Example-acknowledgements.plist */,
+				15EAECF8EF6E6DA2C5AD956EAF699B08 /* Pods-TwilioLookup_Example-dummy.m */,
+				7C471220D0837F83A571DC1E4558C672 /* Pods-TwilioLookup_Example-frameworks.sh */,
+				A5DF2E64987227DF5FA5DAE2CDCF443B /* Pods-TwilioLookup_Example-resources.sh */,
+				B27662314408BEC9612666DB1D881459 /* Pods-TwilioLookup_Example-umbrella.h */,
+				5E350A7B8F8FF00D630225398A8DA35F /* Pods-TwilioLookup_Example.debug.xcconfig */,
+				3D69E6D0592948C64915DEEF0C02108F /* Pods-TwilioLookup_Example.release.xcconfig */,
+			);
+			name = "Pods-TwilioLookup_Example";
+			path = "Target Support Files/Pods-TwilioLookup_Example";
+			sourceTree = "<group>";
+		};
+		59E0C5D5CC0EF7CE3193D3F10090EAC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44AC0AD3E8A0C1A09AFD0C3DFAF9ACCA /* Pods_TwilioLookup_Example.framework */,
+				2117C5CAAC84B460AE8CAC4EEBA0B512 /* Pods_TwilioLookup_Tests.framework */,
+				C2A703B9270F2F4844A675809E786BCF /* TwilioLookup.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				30DE2862B7598BED0D54EF298A61429F /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				59E0C5D5CC0EF7CE3193D3F10090EAC7 /* Products */,
+				01F74F1AEAD7C8235D036FB294813BF9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9F32157A0C88C2CDD61BFF46D7E92625 /* TwilioLookup */ = {
+			isa = PBXGroup;
+			children = (
+				16E53DBAEB3D59FB1EBB4EBCC712F682 /* Classes */,
+			);
+			path = TwilioLookup;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		23C8408D92C35A856B6CC3C693C78487 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D388AAB10CB66FA35B1996F3B3175D1 /* Pods-TwilioLookup_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		483807051FEDF859FD6B3A0CB3904825 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93439F3FFCDC42156EEF462E559C5FB9 /* Pods-TwilioLookup_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB3E08168AD009731E396F3CB274175D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E471B34FFBFF4FFBF87C6C513D79710C /* TwilioLookup-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9F2FC91738694F6AC75A99E242D3B211 /* Pods-TwilioLookup_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38BFC39D13115F143C4B67DAC72296A0 /* Build configuration list for PBXNativeTarget "Pods-TwilioLookup_Tests" */;
+			buildPhases = (
+				734F54B75439A466425F64C4EE18A5B3 /* Sources */,
+				0B12798D54B703EB04115ACD30393712 /* Frameworks */,
+				483807051FEDF859FD6B3A0CB3904825 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-TwilioLookup_Tests";
+			productName = "Pods-TwilioLookup_Tests";
+			productReference = 2117C5CAAC84B460AE8CAC4EEBA0B512 /* Pods_TwilioLookup_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A10F5D2906E5213CFB06E0E4CACC5C32 /* TwilioLookup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D02416A3CE2ACCF9FC3FC694A7568B08 /* Build configuration list for PBXNativeTarget "TwilioLookup" */;
+			buildPhases = (
+				92006E5960045243651F57F902BA1846 /* Sources */,
+				0676F61434747165E267DA6348860AC8 /* Frameworks */,
+				EB3E08168AD009731E396F3CB274175D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwilioLookup;
+			productName = TwilioLookup;
+			productReference = C2A703B9270F2F4844A675809E786BCF /* TwilioLookup.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEBFF40F4A5F04D163D550044A5B155E /* Pods-TwilioLookup_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF5DDDA49D9DA2C0D5593EEF407338BA /* Build configuration list for PBXNativeTarget "Pods-TwilioLookup_Example" */;
+			buildPhases = (
+				E826AC4385EA772A8CD27BF6432B7329 /* Sources */,
+				E076DC5DDE110C3FC97E5F8E39138DE2 /* Frameworks */,
+				23C8408D92C35A856B6CC3C693C78487 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01A29AFDD3FD61B8E04073AA42AFE113 /* PBXTargetDependency */,
+			);
+			name = "Pods-TwilioLookup_Example";
+			productName = "Pods-TwilioLookup_Example";
+			productReference = 44AC0AD3E8A0C1A09AFD0C3DFAF9ACCA /* Pods_TwilioLookup_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 59E0C5D5CC0EF7CE3193D3F10090EAC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEBFF40F4A5F04D163D550044A5B155E /* Pods-TwilioLookup_Example */,
+				9F2FC91738694F6AC75A99E242D3B211 /* Pods-TwilioLookup_Tests */,
+				A10F5D2906E5213CFB06E0E4CACC5C32 /* TwilioLookup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		734F54B75439A466425F64C4EE18A5B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF38F893385D57A3F24BC2A673E2B972 /* Pods-TwilioLookup_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92006E5960045243651F57F902BA1846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8CBE6BB8D1784DE5A5758C30F73C6A /* ReplaceMe.swift in Sources */,
+				382E7F65AEBBFE39F2F707D604096122 /* TwilioLookup-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E826AC4385EA772A8CD27BF6432B7329 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E5E2A560A31DFD47BBBBDD9B2929ADD /* Pods-TwilioLookup_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01A29AFDD3FD61B8E04073AA42AFE113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TwilioLookup;
+			target = A10F5D2906E5213CFB06E0E4CACC5C32 /* TwilioLookup */;
+			targetProxy = 7DE1279FED0E44BFD364835EBAA90474 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08EC3DF64660B825D15CF3B7655E121B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E350A7B8F8FF00D630225398A8DA35F /* Pods-TwilioLookup_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TwilioLookup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TwilioLookup_Example/Pods-TwilioLookup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TwilioLookup_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D91E3F27F82DC4F06EDAA8CF37618EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E1AC9AD439B6860173CB479D7F10EE /* TwilioLookup.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TwilioLookup/TwilioLookup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TwilioLookup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TwilioLookup/TwilioLookup.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = TwilioLookup;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27B8E88948B3394C0B5F2914A82287D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8AD1CBF5DF5CDE45C9177E274793BFD /* Pods-TwilioLookup_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TwilioLookup_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TwilioLookup_Tests/Pods-TwilioLookup_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TwilioLookup_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B53736E204D2AA7D5D09668D2E6CBCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D69E6D0592948C64915DEEF0C02108F /* Pods-TwilioLookup_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TwilioLookup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TwilioLookup_Example/Pods-TwilioLookup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TwilioLookup_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4076EF8790EAC1EDFD1DADD8E19EFBD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E1AC9AD439B6860173CB479D7F10EE /* TwilioLookup.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TwilioLookup/TwilioLookup-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TwilioLookup/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TwilioLookup/TwilioLookup.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TwilioLookup;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		66AC7D4519C355096F58E8F82BA20EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CA60F2A20CF732F7FC310DE2E5C97B8 /* Pods-TwilioLookup_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-TwilioLookup_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TwilioLookup_Tests/Pods-TwilioLookup_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_TwilioLookup_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38BFC39D13115F143C4B67DAC72296A0 /* Build configuration list for PBXNativeTarget "Pods-TwilioLookup_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B8E88948B3394C0B5F2914A82287D0 /* Debug */,
+				66AC7D4519C355096F58E8F82BA20EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF5DDDA49D9DA2C0D5593EEF407338BA /* Build configuration list for PBXNativeTarget "Pods-TwilioLookup_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08EC3DF64660B825D15CF3B7655E121B /* Debug */,
+				3B53736E204D2AA7D5D09668D2E6CBCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D02416A3CE2ACCF9FC3FC694A7568B08 /* Build configuration list for PBXNativeTarget "TwilioLookup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4076EF8790EAC1EDFD1DADD8E19EFBD0 /* Debug */,
+				0D91E3F27F82DC4F06EDAA8CF37618EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
