@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 let kTwilioErrorDomain = "com.pencildrummer.TwilioErrorDomain"
 

@@ -14,7 +14,7 @@ import AlamofireObjectMapper
 /**
  Class used to lookup phone number using the Lookup feature of Twilio.
  
- To use TwilioLookup methods you need to set the `accountSid` and `accountToken` found in the Twilio console dashboard ([Twilio dashboard][https://www.twilio.com/console/sms/dashboard]).
+ To use TwilioLookup methods you need to set the `accountSid` and `accountToken` found in the Twilio console dashboard ([Twilio dashboard](https://www.twilio.com/console/sms/dashboard)).
  */
 public class TwilioLookup {
     
@@ -23,14 +23,14 @@ public class TwilioLookup {
     /**
      The account SID of your account.
      
-     You can find your account SID value in the [Twilio dashboard][https://www.twilio.com/console/sms/dashboard]
+     You can find your account SID value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
     public var accountSid: String?
     
     /**
      The account Token of your account.
      
-     You can find your account Token value in the [Twilio dashboard][https://www.twilio.com/console/sms/dashboard]
+     You can find your account Token value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
     public var accountToken: String?
     
@@ -38,7 +38,7 @@ public class TwilioLookup {
      Use this method to lookup on Twilio for a certain phone number. You can also pass the country ISO code and the type.
      
      - parameter phoneNumber: The phone number to lookup
-     - parameter countryCode: Optional [ISO country code][https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2] of the phone number. This is used to specify the country when the number is provided in a national format.
+     - parameter countryCode: Optional [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the phone number. This is used to specify the country when the number is provided in a national format.
      - parameter type: Indicates the type of information you would like returned with your request. Possible values are `carrier` or `caller-name`. If not specified, the default is nil. This properties is available only on paid accounts.
      - parameter completion: The closure the be executed when the request is finished.
      

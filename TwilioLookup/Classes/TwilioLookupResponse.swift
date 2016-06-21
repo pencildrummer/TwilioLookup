@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 /**
  A successful response to a TwilioLookup.lookup() method return an instance of TwilioLookupResponse
