@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwilioLookup
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        TwilioLookup.sharedInstance.accountSid = "ACacd1047da9574f833a6d76d20a883d35"
+        TwilioLookup.sharedInstance.accountToken = "0d4db9769331e59ae5a61dc644906e46"
+        
         return true
     }
 

@@ -21,22 +21,40 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQv-SD-bw2">
                                 <rect key="frame" x="20" y="44" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d4-13-u0W">
-                                <rect key="frame" x="277" y="101" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="275" y="101" width="51" height="30"/>
+                                <state key="normal" title="Lookup"/>
+                                <connections>
+                                    <action selector="verifyPhoneNumber:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UrA-nY-LWb"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-78-I25">
+                                <rect key="frame" x="20" y="139" width="560" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="D0a-78-I25" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="3EB-H9-4BU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="D0a-78-I25" secondAttribute="bottom" constant="20" id="C7j-k9-wzI"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Kv0-3O-njH"/>
                             <constraint firstItem="8d4-13-u0W" firstAttribute="top" secondItem="wQv-SD-bw2" secondAttribute="bottom" constant="27" id="ZeO-5L-g2a"/>
+                            <constraint firstItem="D0a-78-I25" firstAttribute="top" secondItem="8d4-13-u0W" secondAttribute="bottom" constant="8" id="f2i-tz-0uq"/>
                             <constraint firstItem="8d4-13-u0W" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lJ8-He-k6Z"/>
+                            <constraint firstItem="D0a-78-I25" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="rJ3-oU-aBM"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="wI4-uU-3hL"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="x80-0l-Irb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="debugTextView" destination="D0a-78-I25" id="ypC-Bt-tFD"/>
+                        <outlet property="phoneTextField" destination="wQv-SD-bw2" id="RFX-tV-w5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
