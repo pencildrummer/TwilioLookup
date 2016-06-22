@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TwilioLookup'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TwilioLookup.'
+  s.summary          = 'TwilioLookup is a library to help you check phone numbers using the [Twilio Lookups service](https://www.twilio.com/docs/api/lookups).'
 
   s.homepage         = 'https://github.com/pencildrummer/TwilioLookup'
   s.license          = 'MIT'

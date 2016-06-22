@@ -22,8 +22,6 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         switch self {
         case .Lookup(_, _):
             return .GET
-        default:
-            return .GET
         }
     }
     
@@ -31,8 +29,6 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         switch self {
         case .Lookup(let phoneNumber, _):
             return baseURL.URLByAppendingPathComponent("PhoneNumbers").URLByAppendingPathComponent(phoneNumber).URLByAppendingPathComponent("/")
-        default:
-            return nil
         }
     }
     
@@ -40,8 +36,6 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         switch self {
         case .Lookup(_, let params):
             return params
-        default:
-            return nil
         }
     }
     
