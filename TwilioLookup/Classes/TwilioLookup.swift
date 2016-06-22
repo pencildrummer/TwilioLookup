@@ -48,13 +48,13 @@ public class TwilioLookup {
      
      - seealso: TwilioLookupResponse
      */
-    public class func lookup(phoneNumber: String, countryCode: String? = nil, type: String? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
-        sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, completion: completion)
+    public class func lookup(phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+        sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
     }
     
     // MARK: - Private implementations
     
-    private func lookup(phoneNumber: String, countryCode: String?, type: String?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+    private func lookup(phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         
         var parameters: [String: AnyObject] = [:]
         
@@ -64,6 +64,14 @@ public class TwilioLookup {
         
         if let type = type {
             parameters["Type"] = type
+        }
+        
+        if let addOns = addOns {
+            var addOnsUniqueNames: [String] = []
+            for addOn in addOns {
+                addOnsUniqueNames.append(addOn.uniqueName())
+            }
+            parameters["AddOns"] = addOnsUniqueNames
         }
         
         Alamofire.request(TwilioLookupRouter.Lookup(phoneNumber, parameters))

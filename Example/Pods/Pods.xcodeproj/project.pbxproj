@@ -64,6 +64,8 @@
 		E9188EFFBDD87EBA64118642926A32D9 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B383C3226BB8D7B65D23B0BF85BD58 /* FromJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C304C0A36338C490292128C90D2467 /* Request.swift */; };
 		EFF08CF8B9EB2B9BBA6A4DE38ABDD30E /* TwilioLookup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDE874637B63D38D61348B779A3F5BA /* TwilioLookup-dummy.m */; };
+		F4A867DF1D1A7E5C0098CF67 /* TwilioAddOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A867DE1D1A7E5C0098CF67 /* TwilioAddOn.swift */; };
+		F4A867E11D1A82390098CF67 /* TwilioCarrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A867E01D1A82390098CF67 /* TwilioCarrier.swift */; };
 		F4DECF6405D7172A32F3D47EDCA49027 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11E971A381A049DB15AD4D19C42FE95 /* NSDecimalNumberTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F8E8A54004355BEDF60903CA298AA38E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0193825564CFDBD56812D93E90FA2E4D /* Alamofire.framework */; };
 		FECF225111DC27972EADA48B771A3633 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18D948932FC805766DA2415B57C283 /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -227,6 +229,8 @@
 		E8AD1CBF5DF5CDE45C9177E274793BFD /* Pods-TwilioLookup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TwilioLookup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6205C743B56972CCD97216C3960310 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		F4A68E33BFB371A38E6D3D07F21E8A5A /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		F4A867DE1D1A7E5C0098CF67 /* TwilioAddOn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioAddOn.swift; sourceTree = "<group>"; };
+		F4A867E01D1A82390098CF67 /* TwilioCarrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioCarrier.swift; sourceTree = "<group>"; };
 		FFB06702305B1F6F7BFF9278DB8C7D7D /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -499,7 +503,9 @@
 				C078C90C5ED4E36E5C083AF0CF2582AA /* TwilioError.swift */,
 				9213BF05538D0008A6EEE092C8CAACB0 /* TwilioLookup.swift */,
 				2A1BBF89DEE7C2A264AB18C98057D8F3 /* TwilioLookupResponse.swift */,
+				F4A867E01D1A82390098CF67 /* TwilioCarrier.swift */,
 				DC6B086A65B5C1DF9246E1BEFD5CD26C /* TwilioLookupRouter.swift */,
+				F4A867DE1D1A7E5C0098CF67 /* TwilioAddOn.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -781,7 +787,9 @@
 				EFF08CF8B9EB2B9BBA6A4DE38ABDD30E /* TwilioLookup-dummy.m in Sources */,
 				2B6C92D435F25F345107676DE9486BBD /* TwilioLookup.swift in Sources */,
 				1D357B508809EF8F542856FD884782FA /* TwilioLookupResponse.swift in Sources */,
+				F4A867DF1D1A7E5C0098CF67 /* TwilioAddOn.swift in Sources */,
 				45E2CFCB2E88715D6A939E8736A6F5DD /* TwilioLookupRouter.swift in Sources */,
+				F4A867E11D1A82390098CF67 /* TwilioCarrier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
