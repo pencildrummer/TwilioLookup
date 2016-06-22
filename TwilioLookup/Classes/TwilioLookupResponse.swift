@@ -25,7 +25,8 @@ public class TwilioLookupResponse: NSObject, Mappable {
     var phoneNumber: String!
     /// The phone number, in national format.
     var nationalFormat: String!
-    var carrier: String?
+    /// The carrier information if requested.
+    var carrier: TwilioCarrier?
     /// [TODO] Results of any Add-ons you have specified using the AddOn parameter in the request, as a JSON dictionary. For the format of the dictionary, refer to Using Add-ons 6 section in the Add-ons documentation.
     var addons: [TwilioAddOn]?
     
