@@ -35,29 +35,29 @@
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 
-<p>To use <strong>TwilioLookup</strong> you must have an account on Twilio. You can register for a new one on the <a href="https://www.twilio.com/try-twilio">Twilio sign up page</a>.</p>
+<p>To use <strong>TwilioLookup</strong> you must have an account on Twilio. You can register a new one on the <a href="https://www.twilio.com/try-twilio">Twilio sign up page</a>.</p>
 
-<p>Once you have an account you must configure <strong>TwilioLookup</strong> to use it.</p>
+<p>Once you have an account you can configure <strong>TwilioLookup</strong> to use it.</p>
 
-<p>To do so find in the <a href="https://www.twilio.com/console/sms/dashboard">Twilio dashboard</a>, by clicking on the 'Show API Credentials' link on the upper right corner, your <code>Account SID</code> and <code>Account Token</code> and configure them as shown below.</p>
+<p>Find in the <a href="https://www.twilio.com/console/sms/dashboard">Twilio dashboard</a>, by clicking on the <em>"Show API Credentials"</em> link on the upper right corner, your <code>Account SID</code> and <code>Account Token</code> and configure them as shown below.</p>
 
 <p>One of the best place to configure <strong>TwilioLookup</strong> is in the <code>application(_, didFinishLaunchingWithOptions:)</code> implementation.</p>
 
 <pre><code>func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
 
-    // ...
+// ...
 
-    TwilioLookup.accountSid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    TwilioLookup.accountToken = "your_auth_token"
+TwilioLookup.accountSid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+TwilioLookup.accountToken = "your_auth_token"
 
-    return true
+return true
 }
 </code></pre>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<p>TwilioLookup is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+<p><strong>TwilioLookup</strong> is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
 
 <div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">"</span>TwilioLookup<span class="pl-pds">"</span></span></pre></div>
