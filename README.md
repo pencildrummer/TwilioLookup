@@ -1,6 +1,6 @@
 # TwilioLookup
 
-[![CI Status](http://img.shields.io/travis/Fabio Borella/TwilioLookup.svg?style=flat)](https://travis-ci.org/Fabio Borella/TwilioLookup)
+[![CI Status](http://img.shields.io/travis/pencildrummer/TwilioLookup.svg?style=flat)](https://travis-ci.org/pencildrummer/TwilioLookup)
 [![Version](https://img.shields.io/cocoapods/v/TwilioLookup.svg?style=flat)](http://cocoapods.org/pods/TwilioLookup)
 [![License](https://img.shields.io/cocoapods/l/TwilioLookup.svg?style=flat)](http://cocoapods.org/pods/TwilioLookup)
 [![Platform](https://img.shields.io/cocoapods/p/TwilioLookup.svg?style=flat)](http://cocoapods.org/pods/TwilioLookup)
