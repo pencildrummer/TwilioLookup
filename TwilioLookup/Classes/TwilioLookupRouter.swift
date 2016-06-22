@@ -52,7 +52,7 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         
         // Configure authorization
         
-        let basicAuthHeader = basicAuthorizationHeader(TwilioLookup.sharedInstance.accountSid!, token: TwilioLookup.sharedInstance.accountToken!)
+        let basicAuthHeader = basicAuthorizationHeader(TwilioLookup.accountSid!, token: TwilioLookup.accountToken!)
         request.setValue(basicAuthHeader, forHTTPHeaderField: "Authorization")
         
         // Configure parameters

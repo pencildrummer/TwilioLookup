@@ -18,8 +18,6 @@ import AlamofireObjectMapper
  */
 public class TwilioLookup {
     
-    public static let sharedInstance = TwilioLookup()
-    
     // MARK: - Settings
     
     /**
@@ -27,14 +25,28 @@ public class TwilioLookup {
      
      You can find your account SID value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public var accountSid: String?
+    public class var accountSid: String? {
+        set {
+            sharedInstance.accountSid = newValue
+        }
+        get {
+            return sharedInstance.accountSid
+        }
+    }
     
     /**
      The account Token of your account.
      
      You can find your account Token value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public var accountToken: String?
+    public class var accountToken: String? {
+        set {
+            sharedInstance.accountToken = newValue
+        }
+        get {
+            return sharedInstance.accountToken
+        }
+    }
     
     // MARK: - Methods
     
@@ -52,7 +64,15 @@ public class TwilioLookup {
         sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
     }
     
-    // MARK: - Private implementations
+    // MARK: -
+    // MARK: Private vars
+    
+    private static let sharedInstance = TwilioLookup()
+    
+    private var accountSid: String?
+    private var accountToken: String?
+    
+    // MARK: Private implementations
     
     private func lookup(phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         
