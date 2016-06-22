@@ -12,13 +12,21 @@ import libPhoneNumber_iOS
 
 class ViewController: UIViewController {
 
-    lazy var formatter: NBAsYouTypeFormatter = {
-        let currentLocaleCode = NSLocale.componentsFromLocaleIdentifier(NSLocale.currentLocale().localeIdentifier)[NSLocaleCountryCode] ?? "US"
-        return NBAsYouTypeFormatter(regionCode: currentLocaleCode)
-    }()
+    var currentCountryCode: String! {
+        didSet {
+            formatter = NBAsYouTypeFormatter(regionCode: currentCountryCode)
+            
+            let prefix = NBPhoneNumberUtil.sharedInstance().getCountryCodeForRegion(currentCountryCode)
+            countryCodeButton.setTitle("\(currentCountryCode) +\(prefix)", forState: .Normal)
+        }
+    }
     
-    @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var debugTextView: UITextView!
+    var formatter: NBAsYouTypeFormatter?
+    
+    @IBOutlet private var countryCodeButton: UIButton!
+    @IBOutlet private var phoneTextField: UITextField!
+    @IBOutlet private var debugTextView: UITextView!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     @IBAction func verifyPhoneNumber(sender: AnyObject) {
         let attributes = [
@@ -26,7 +34,13 @@ class ViewController: UIViewController {
             NSForegroundColorAttributeName : UIColor.darkGrayColor()
         ]
         self.debugTextView.attributedText = NSAttributedString(string: "Verifying...", attributes: attributes)
-        TwilioLookup.lookup(phoneTextField.text!) { (response, error) in
+        
+        activityIndicator.startAnimating()
+        
+        TwilioLookup.lookup(phoneTextField.text!, countryCode: currentCountryCode) { (response, error) in
+            
+            self.activityIndicator.stopAnimating()
+            
             if error == nil {
                 
                 debugPrint(response?.toJSONString(true))
@@ -49,12 +63,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        currentCountryCode = NSLocale.componentsFromLocaleIdentifier(NSLocale.currentLocale().localeIdentifier)[NSLocaleCountryCode] ?? "US"
+        
         phoneTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showCountryCodes" {
+            (segue.destinationViewController as! CountryCodesViewController).sourceController = self
+        }
     }
 
 }
@@ -64,9 +87,9 @@ extension ViewController: UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
         if range.length > 0 && string.characters.count == 0 && string == "" {
-            textField.text = formatter.removeLastDigit()
+            textField.text = formatter?.removeLastDigit()
         } else {
-            textField.text = formatter.inputDigit(string)
+            textField.text = formatter?.inputDigit(string)
         }
         
         return false
