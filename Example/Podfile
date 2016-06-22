@@ -2,7 +2,8 @@ use_frameworks!
 
 target 'TwilioLookup_Example' do
   pod 'TwilioLookup', :path => '../'
-
+  pod 'libPhoneNumber-iOS', '~> 0.8'
+  
   target 'TwilioLookup_Tests' do
     inherit! :search_paths
 

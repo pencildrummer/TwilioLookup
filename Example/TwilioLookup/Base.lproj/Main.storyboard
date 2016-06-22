@@ -18,20 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQv-SD-bw2">
-                                <rect key="frame" x="20" y="44" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="Line" translatesAutoresizingMaskIntoConstraints="NO" id="wQv-SD-bw2">
+                                <rect key="frame" x="20" y="44" width="560" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="srg-mR-kXc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d4-13-u0W">
-                                <rect key="frame" x="275" y="101" width="51" height="30"/>
-                                <state key="normal" title="Lookup"/>
+                                <rect key="frame" x="20" y="115" width="560" height="49"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="LOOKUP" backgroundImage="LookupButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="verifyPhoneNumber:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UrA-nY-LWb"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-78-I25">
-                                <rect key="frame" x="20" y="139" width="560" height="441"/>
+                                <rect key="frame" x="20" y="172" width="560" height="408"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="12"/>
@@ -41,11 +47,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="D0a-78-I25" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="3EB-H9-4BU"/>
+                            <constraint firstItem="8d4-13-u0W" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="3pL-VJ-kCs"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="D0a-78-I25" secondAttribute="bottom" constant="20" id="C7j-k9-wzI"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Kv0-3O-njH"/>
                             <constraint firstItem="8d4-13-u0W" firstAttribute="top" secondItem="wQv-SD-bw2" secondAttribute="bottom" constant="27" id="ZeO-5L-g2a"/>
+                            <constraint firstItem="8d4-13-u0W" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="evZ-AT-ibx"/>
                             <constraint firstItem="D0a-78-I25" firstAttribute="top" secondItem="8d4-13-u0W" secondAttribute="bottom" constant="8" id="f2i-tz-0uq"/>
-                            <constraint firstItem="8d4-13-u0W" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="lJ8-He-k6Z"/>
                             <constraint firstItem="D0a-78-I25" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="rJ3-oU-aBM"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="wI4-uU-3hL"/>
                             <constraint firstItem="wQv-SD-bw2" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="x80-0l-Irb"/>
@@ -61,4 +68,8 @@
             <point key="canvasLocation" x="305" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Line" width="358" height="3"/>
+        <image name="LookupButton" width="362" height="49"/>
+    </resources>
 </document>

@@ -8,9 +8,15 @@
 
 import UIKit
 import TwilioLookup
+import libPhoneNumber_iOS
 
 class ViewController: UIViewController {
 
+    lazy var formatter: NBAsYouTypeFormatter = {
+        let currentLocaleCode = NSLocale.componentsFromLocaleIdentifier(NSLocale.currentLocale().localeIdentifier)[NSLocaleCountryCode] ?? "US"
+        return NBAsYouTypeFormatter(regionCode: currentLocaleCode)
+    }()
+    
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var debugTextView: UITextView!
     
@@ -43,6 +49,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        phoneTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,3 +59,17 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITextFieldDelegate {
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.length > 0 && string.characters.count == 0 && string == "" {
+            textField.text = formatter.removeLastDigit()
+        } else {
+            textField.text = formatter.inputDigit(string)
+        }
+        
+        return false
+    }
+    
+}

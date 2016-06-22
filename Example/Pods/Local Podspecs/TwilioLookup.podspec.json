@@ -1,7 +1,7 @@
 {
   "name": "TwilioLookup",
   "version": "0.1.0",
-  "summary": "A short description of TwilioLookup.",
+  "summary": "TwilioLookup is a library to help you check phone numbers using the Twilio Lookups service",
   "homepage": "https://github.com/pencildrummer/TwilioLookup",
   "license": "MIT",
   "authors": {
