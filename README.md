@@ -11,6 +11,23 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+To use __TwilioLookup__ you must have an account on Twilio. You can register for a new one on the [Twilio sign up page](https://www.twilio.com/try-twilio).
+
+Once you have an account you must configure __TwilioLookup__ to use you account. To do so find in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard) your `Account SID` and `Account Token` and configure it as shown below.
+The best place to configure __TwilioLookup__ is in the `application(_, didFinishLaunchingWithOptions:)` implementation.
+
+```
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    // ...
+
+    TwilioLookup.accountSid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    TwilioLookup.accountToken = "your_auth_token"
+
+    return true
+}
+```
+
 ## Installation
 
 TwilioLookup is available through [CocoaPods](http://cocoapods.org). To install
