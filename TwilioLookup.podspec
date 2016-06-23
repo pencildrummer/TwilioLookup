@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TwilioLookup/Classes/*.swift'
+  s.source_files = 'TwilioLookup/Sources/*.swift'
 
   s.dependency 'Alamofire'
   s.dependency 'AlamofireObjectMapper', '~> 3.0'
