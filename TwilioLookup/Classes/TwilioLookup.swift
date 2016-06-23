@@ -105,6 +105,8 @@ public class TwilioLookup {
                     if let errorJSON = String(data: response.data!, encoding: NSUTF8StringEncoding) {
                         if let twilioError = TwilioError(JSONString: errorJSON) {
                             completion(nil, twilioError)
+                        } else {
+                            completion(nil, response.result.error!)
                         }
                     } else {
                         completion(nil, response.result.error!)
