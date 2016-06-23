@@ -6,7 +6,7 @@ copyright: 2016 © Fabio Borella - Pencildrummer
 
 clean: false
 min_acl: public
-skip_undocumented: true
+skip_undocumented: false
 readme: ./README.md
 
 #docset_icon: Docs/icon.png
@@ -19,3 +19,8 @@ custom_categories:
     - TwilioLookup
     - TwilioLookupResponse
     - TwilioError
+    - TwilioErrorCode
+    - TwilioCarrier
+    - TwilioCarrierType
+    - TwilioCarrierCallerType
+    - TwilioAddOn

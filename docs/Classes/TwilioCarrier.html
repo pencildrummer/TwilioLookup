@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TwilioError Class Reference</title>
+    <title>TwilioCarrier Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/TwilioError" class="dashAnchor"></a>
-    <a title="TwilioError Class Reference"></a>
+    <a name="//apple_ref/swift/Class/TwilioCarrier" class="dashAnchor"></a>
+    <a title="TwilioCarrier Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">TwilioLookup Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">TwilioLookup Reference</a>
         <img id="carat" src="../img/carat.png" />
-        TwilioError Class Reference
+        TwilioCarrier Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -62,20 +62,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>TwilioError</h1>
+            <h1>TwilioCarrier</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TwilioError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="kt">Mappable</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TwilioCarrier</span></code></pre>
 
                 </div>
               </div>
-            <p>This is the default class used to represent the Twilio error responses.</p>
-
-<div class="aside aside-seealso">
-    <p class="aside-title">Seealso</p>
-    TwilioLookup
-
-</div>
+            <p>The carrier of a certain phone number</p>
 
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
@@ -90,9 +84,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC12TwilioLookup11TwilioError10twilioCodeGSQOS_15TwilioErrorCode_"></a>
-                    <a name="//apple_ref/swift/Property/twilioCode" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC12TwilioLookup11TwilioError10twilioCodeGSQOS_15TwilioErrorCode_">twilioCode</a>
+                    <a name="/s:vC12TwilioLookup13TwilioCarrier17mobileCountryCodeGSQSS_"></a>
+                    <a name="//apple_ref/swift/Property/mobileCountryCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12TwilioLookup13TwilioCarrier17mobileCountryCodeGSQSS_">mobileCountryCode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,14 +94,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Twilio-specific error code.</p>
+                        <p>The mobile country code of the carrier (for mobile numbers only).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">twilioCode</span><span class="p">:</span> <span class="kt"><a href="../Enums/TwilioErrorCode.html">TwilioErrorCode</a></span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">mobileCountryCode</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -117,9 +111,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC12TwilioLookup11TwilioError19moreInfoDescriptionGSQSS_"></a>
-                    <a name="//apple_ref/swift/Property/moreInfoDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC12TwilioLookup11TwilioError19moreInfoDescriptionGSQSS_">moreInfoDescription</a>
+                    <a name="/s:vC12TwilioLookup13TwilioCarrier17mobileNetworkCodeGSQSS_"></a>
+                    <a name="//apple_ref/swift/Property/mobileNetworkCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12TwilioLookup13TwilioCarrier17mobileNetworkCodeGSQSS_">mobileNetworkCode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -127,14 +121,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Additional info to debug the error.</p>
+                        <p>The mobile network code of the carrier (for mobile numbers only).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">moreInfoDescription</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">mobileNetworkCode</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -144,9 +138,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC12TwilioLookup11TwilioError6statusGSQSu_"></a>
-                    <a name="//apple_ref/swift/Property/status" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC12TwilioLookup11TwilioError6statusGSQSu_">status</a>
+                    <a name="/s:vC12TwilioLookup13TwilioCarrier4nameGSQSS_"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12TwilioLookup13TwilioCarrier4nameGSQSS_">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -154,14 +148,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The HTTP status code of the error response.</p>
+                        <p>The name of the carrier. Please bear in mind that carriers rebrand themselves constantly and that the names used for carriers will likely change over time.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">UInt</span><span class="o">!</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -171,9 +165,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC12TwilioLookup11TwilioErrorcFT5coderCSo7NSCoder_GSqS0__"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC12TwilioLookup11TwilioErrorcFT5coderCSo7NSCoder_GSqS0__">init(coder:)</a>
+                    <a name="/s:vC12TwilioLookup13TwilioCarrier4typeGSQOS_17TwilioCarrierType_"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12TwilioLookup13TwilioCarrier4typeGSQOS_17TwilioCarrierType_">type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -181,14 +175,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Init method required to subclass NSError</p>
+                        <p>The phone number type. See <code><a href="../Enums/TwilioCarrierType.html">TwilioCarrierType</a></code> for more information.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/TwilioCarrierType.html">TwilioCarrierType</a></span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -198,9 +192,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC12TwilioLookup11TwilioErrorcFC12ObjectMapper3MapGSqS0__"></a>
-                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC12TwilioLookup11TwilioErrorcFC12ObjectMapper3MapGSqS0__">init(_:)</a>
+                    <a name="/s:vC12TwilioLookup13TwilioCarrier9errorCodeGSqOS_15TwilioErrorCode_"></a>
+                    <a name="//apple_ref/swift/Property/errorCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC12TwilioLookup13TwilioCarrier9errorCodeGSqOS_15TwilioErrorCode_">errorCode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,68 +202,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Init method needed to conform to Mappable protocol</p>
+                        <p>The error code, if any, associated with your request.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">_</span> <span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC12TwilioLookup11TwilioError7mappingFC12ObjectMapper3MapT_"></a>
-                    <a name="//apple_ref/swift/Method/mapping(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC12TwilioLookup11TwilioError7mappingFC12ObjectMapper3MapT_">mapping(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Mapping function needed to conform to Mappable protocol</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">map</span><span class="p">:</span> <span class="kt">Map</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC12TwilioLookup11TwilioError20localizedDescriptionSS"></a>
-                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC12TwilioLookup11TwilioError20localizedDescriptionSS">localizedDescription</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A string containing the localized description of the Twilio error. (read-only)</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorCode</span><span class="p">:</span> <span class="kt"><a href="../Enums/TwilioErrorCode.html">TwilioErrorCode</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

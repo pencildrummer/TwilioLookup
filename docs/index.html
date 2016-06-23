@@ -13,7 +13,7 @@
     <a title="TwilioLookup  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">TwilioLookup Docs</a> (26% documented)</p>
+        <p><a href="index.html">TwilioLookup Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/pencildrumer/TwilioLookup"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -34,26 +34,25 @@
                 <a href="Classes/TwilioLookup.html">TwilioLookup</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:C12TwilioLookup20TwilioLookupResponse">TwilioLookupResponse</a>
+                <a href="Classes/TwilioLookupResponse.html">TwilioLookupResponse</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/TwilioError.html">TwilioError</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Enums.html#/s:O12TwilioLookup15TwilioErrorCode">TwilioErrorCode</a>
+                <a href="Enums/TwilioErrorCode.html">TwilioErrorCode</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Protocols.html">Other Protocols</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Protocols.html#/s:P12TwilioLookup11TwilioAddOn">TwilioAddOn</a>
+                <a href="Classes/TwilioCarrier.html">TwilioCarrier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TwilioCarrierType.html">TwilioCarrierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TwilioCarrierCallerType.html">TwilioCarrierCallerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/TwilioAddOn.html">TwilioAddOn</a>
               </li>
             </ul>
           </li>
@@ -65,7 +64,7 @@
             
             <a href='#twiliolookup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='twiliolookup'>TwilioLookup</h1>
 
-<p><a href="https://travis-ci.org/Fabio%20Borella/TwilioLookup"><img src="http://img.shields.io/travis/Fabio%20Borella/TwilioLookup.svg?style=flat" alt="CI Status"></a>
+<p><a href="https://travis-ci.org/pencildrummer/TwilioLookup"><img src="http://img.shields.io/travis/pencildrummer/TwilioLookup.svg?style=flat" alt="CI Status"></a>
 <a href="http://cocoapods.org/pods/TwilioLookup"><img src="https://img.shields.io/cocoapods/v/TwilioLookup.svg?style=flat" alt="Version"></a>
 <a href="http://cocoapods.org/pods/TwilioLookup"><img src="https://img.shields.io/cocoapods/l/TwilioLookup.svg?style=flat" alt="License"></a>
 <a href="http://cocoapods.org/pods/TwilioLookup"><img src="https://img.shields.io/cocoapods/p/TwilioLookup.svg?style=flat" alt="Platform"></a></p>
@@ -73,9 +72,27 @@
 
 <p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
 <a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
+
+<p>To use <strong>TwilioLookup</strong> you must have an account on Twilio. You can register a new one on the <a href="https://www.twilio.com/try-twilio">Twilio sign up page</a>.</p>
+
+<p>Once you have an account you can configure <strong>TwilioLookup</strong> to use it.</p>
+
+<p>Find in the <a href="https://www.twilio.com/console/sms/dashboard">Twilio dashboard</a>, by clicking on the <em><q>Show API Credentials</q></em> link on the upper right corner, your <code>Account SID</code> and <code>Account Token</code> and configure them as shown below.</p>
+
+<p>One of the best place to configure <strong>TwilioLookup</strong> is in the <code>application(_, didFinishLaunchingWithOptions:)</code> implementation.</p>
+<pre class="highlight plaintext"><code>func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+
+// ...
+
+TwilioLookup.accountSid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+TwilioLookup.accountToken = "your_auth_token"
+
+return true
+}
+</code></pre>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 
-<p>TwilioLookup is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+<p><strong>TwilioLookup</strong> is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"TwilioLookup"</span>
 </code></pre>

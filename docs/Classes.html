@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">TwilioLookup Docs</a> (26% documented)</p>
+        <p><a href="index.html">TwilioLookup Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/pencildrumer/TwilioLookup"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -34,26 +34,25 @@
                 <a href="Classes/TwilioLookup.html">TwilioLookup</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes.html#/s:C12TwilioLookup20TwilioLookupResponse">TwilioLookupResponse</a>
+                <a href="Classes/TwilioLookupResponse.html">TwilioLookupResponse</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/TwilioError.html">TwilioError</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enums</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Enums.html#/s:O12TwilioLookup15TwilioErrorCode">TwilioErrorCode</a>
+                <a href="Enums/TwilioErrorCode.html">TwilioErrorCode</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Protocols.html">Other Protocols</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Other Protocols.html#/s:P12TwilioLookup11TwilioAddOn">TwilioAddOn</a>
+                <a href="Classes/TwilioCarrier.html">TwilioCarrier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TwilioCarrierType.html">TwilioCarrierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/TwilioCarrierCallerType.html">TwilioCarrierCallerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/TwilioAddOn.html">TwilioAddOn</a>
               </li>
             </ul>
           </li>
@@ -115,7 +114,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A successful response to a TwilioLookup.lookup() method return an instance of this class.</p>
+                        <p>A successful response to a <code>lookup(_:countryCode:type:addOns:completion:)</code> method return an instance of this class.</p>
 
 <div class="aside aside-seealso">
     <p class="aside-title">Seealso</p>
@@ -129,6 +128,7 @@
 
 </div>
 
+                        <a href="Classes/TwilioLookupResponse.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -179,6 +179,160 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TwilioError</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">,</span> <span class="kt">Mappable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O12TwilioLookup15TwilioErrorCode"></a>
+                    <a name="//apple_ref/swift/Enum/TwilioErrorCode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O12TwilioLookup15TwilioErrorCode">TwilioErrorCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Twilio error codes. For a complete list look the <a href="https://www.twilio.com/docs/api/errors/reference">Error Code Reference</a>.</p>
+
+                        <a href="Enums/TwilioErrorCode.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TwilioErrorCode</span><span class="p">:</span> <span class="kt">UInt</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C12TwilioLookup13TwilioCarrier"></a>
+                    <a name="//apple_ref/swift/Class/TwilioCarrier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C12TwilioLookup13TwilioCarrier">TwilioCarrier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The carrier of a certain phone number</p>
+
+<div class="aside aside-seealso">
+    <p class="aside-title">Seealso</p>
+    TwilioLookupResponse
+
+</div>
+
+                        <a href="Classes/TwilioCarrier.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TwilioCarrier</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O12TwilioLookup17TwilioCarrierType"></a>
+                    <a name="//apple_ref/swift/Enum/TwilioCarrierType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O12TwilioLookup17TwilioCarrierType">TwilioCarrierType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Available types of carrier</p>
+
+                        <a href="Enums/TwilioCarrierType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TwilioCarrierType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O12TwilioLookup23TwilioCarrierCallerType"></a>
+                    <a name="//apple_ref/swift/Enum/TwilioCarrierCallerType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O12TwilioLookup23TwilioCarrierCallerType">TwilioCarrierCallerType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Available types of carrier caller</p>
+
+                        <a href="Enums/TwilioCarrierCallerType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">TwilioCarrierCallerType</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P12TwilioLookup11TwilioAddOn"></a>
+                    <a name="//apple_ref/swift/Protocol/TwilioAddOn" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P12TwilioLookup11TwilioAddOn">TwilioAddOn</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Protocol to implement when creating a TwilioAddOn</p>
+
+                        <a href="Protocols/TwilioAddOn.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TwilioAddOn</span></code></pre>
 
                         </div>
                       </div>

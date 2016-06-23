@@ -13,6 +13,7 @@ import Foundation
  */
 public protocol TwilioAddOn {
     
+    /// The unique name of the add on
     func uniqueName() -> String
     
 }

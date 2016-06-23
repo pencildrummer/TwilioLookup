@@ -17,21 +17,35 @@ import ObjectMapper
  */
 public class TwilioError: NSError, Mappable {
     
-    /// Twilio-specific error code.
+    /**
+     Twilio-specific error code.
+     */
     public var twilioCode: TwilioErrorCode! {
         return TwilioErrorCode(rawValue: UInt(code))
     }
-    /// Additional info to debug the error.
+    
+    /** 
+     Additional info to debug the error.
+     */
     public var moreInfoDescription: String!
-    /// The HTTP status code of the error response.
+    
+    /** 
+     The HTTP status code of the error response.
+     */
     public var status: UInt!
     
     private var twilioDescription: String!
     
+    /**
+     Init method required to subclass NSError
+     */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    /** 
+     Init method needed to conform to Mappable protocol
+     */
     required public init?(_ map: Map) {
         super.init(domain: kTwilioErrorDomain,
                    code: map.JSONDictionary["code"] as! Int,
@@ -40,12 +54,18 @@ public class TwilioError: NSError, Mappable {
             ])
     }
     
+    /** 
+     Mapping function needed to conform to Mappable protocol
+     */
     public func mapping(map: Map) {
         twilioDescription <- map["message"]
         moreInfoDescription <- map["more_info"]
         status <- map["status"]
     }
     
+    /** 
+     A string containing the localized description of the Twilio error. (read-only)
+     */
     public override var localizedDescription: String {
         return twilioDescription
     }
@@ -57,20 +77,35 @@ let kTwilioErrorDomain = "com.pencildrummer.TwilioErrorDomain"
 
 /// Twilio error codes. For a complete list look the [Error Code Reference](https://www.twilio.com/docs/api/errors/reference).
 public enum TwilioErrorCode: UInt {
+    /// 10001 - This account has been disabled and may not be used until it is reactivated.
     case AccountIsNotActive = 10001
+    /// 10002 - Your account is currently in Trial mode and does not have access to this feature.
     case TrialAccountDoesNotSupportThisFeature = 10002
+    /// 10003 - An incoming call was made to your application, but was not answered because your account was not active at the time.
     case IncomingCallRejectedDueToInactiveAccount = 10003
+    /// 11100 - The format of the provided URL is invalid.
     case InvalidURLFormat = 11100
+    /// 11200 - There was a failure attempting to retrieve the contents of this URL. An 11200 error is an indicator of a connection failure between Twilio and your service.
     case HTTPRetrievalFailure = 11200
+    /// 11205 - There was a network failure attempting to connect to this URL
     case HTTPConnectionFailure = 11205
+    /// 11206 - There was an error speaking HTTP to the target URL.
     case HTTPProtocolViolation = 11206
+    /// 11210 - The DNS entry for the URL's host cannot be resolved.
     case HTTPBadHostName = 11210
+    /// 11215 - This request has been redirected too many times and may be in a loop.
     case HTTPTooManyRedirects = 11215
+    /// 11220 - During SSL/TLS negotiation, Twilio experienced a connection reset.
     case SSL_TLSHandshakeError = 11220
+    /// 11235 - Twilio tried to validate your SSL certificate but your certificate has a domain name that does not match the domain we requested.
     case CertificateInvalid_DomainMismatch = 11235
+    /// 11236 - Twilio tried to validate your SSL certificate but your certificate has expired.
     case CertificateInvalid_Certificate_Expired = 11236
+    /// 11237 - Twilio tried to validate your SSL certificate but was unable to find it in our certificate store.
     case CertificateInvalid_CouldNotFindPathToCertificate = 11237
+    /// 11300 - The provided URL template has an invalid format. Please check to see if you have unclosed brackets.
     case InvalidTemplateURL = 11300
+    /// 11310 - The provided URL template references a nonexistent token.
     case InvalidTemplateToken = 11310
 //    11320: Invalid template unclosed brackets
 //    11750: TwiML response body too large
@@ -211,11 +246,78 @@ public enum TwilioErrorCode: UInt {
 //    20105: Access Token not yet valid
 //    20106: Invalid Access Token grants
 //    20107: Invalid Access Token signature
+    
+    /// 20403 - The account lacks permission to access the Twilio API. Typically this means the account has been suspended or closed. For assistance, please contact a help@twilio.com.
     case Forbidden = 20403
+    
+    /**
+     
+     The resource was not found. Here are some examples of cases that may trigger a 404 error.
+     
+     - Requesting a resource for a sid that does not exist, for example
+     
+       ```
+       GET /2010-04-01/Accounts/AC123/Calls/CA123
+       ```
+     
+       where CA123 is not a call sid that exists for your account
+     
+     
+     - Trying to retrieve a resource that doesn't exist, for example
+       ```
+       GET /2010-04-01/Accounts/AC123/TwilioCalls/CA123
+       ```
+       where the resource name is Calls, not TwilioCalls. Note that the API is case sensitive, so requesting "calls" instead of "Calls" will also return a 404.
+     
+     
+     - Missing a sid in the request path. For example, let's say I accidentally don't set a value for a call sid, using the PHP helper library:
+       ```
+       $callSid = null;
+       $client->account->calls->get($callSid);
+       ```
+       This may turn into
+       ```
+       GET /2010-04-01/Accounts/AC123/Calls/.json
+       ```
+       because of the nonexistent sid, which may 404 your request or give you back a result you were not expecting. Or, you may initialize the client with an empty string for an account sid, which means the URL will get truncated in the middle (note the consecutive slashes):
+       ```
+       GET /2010-04-01/Accounts//Calls/CA123.json
+       ```
+     
+     - Using a base URL that is not https://api.twilio.com. For example, making requests to https://twilio.com or https://www.twilio.com will not work.
+     
+     */
     case NotFound = 20404
+    
+    /**
+     Your account is sending too many concurrent requests to the Twilio API. Please wait for a short period of time and make the request again, or alter your client's settings to issue fewer concurrent requests to the Twilio API.
+     
+     Twilio Support can provide advice for architecting your application to avoid 429 errors. For more information, contact support.
+     
+     A 429 request is never processed and is always safe to retry.
+     */
     case TooManyRequests = 20429
+    
+    /**
+     The Twilio API encountered an error when processing your request. This generally indicates an error in the server handling logic or a timeout in the API. We apologize for the inconvenience.
+     
+     If you are seeing a consistent pattern of 500 server errors coming from the Twilio API, check our status page for more details. If our status page has no information, contact support with details about the requests that are failing, and we will investigate.
+     
+     GET and DELETE requests are always safe for you to retry as they are idempotent. Some POST requests are idempotent by nature - purchasing a specific phone number, or hanging up a call - and while these may return different HTTP status codes on each attempt, the end state of the system will be the same whether you make the request one time or ten.
+     
+     Other POST requests - sending an SMS or triggering an outbound call - are not idempotent. If you get a 500 Server Error on these requests, and you retry the request, it is possible for a customer to receive multiple messages or calls from your application.
+     */
     case InternalServerError = 20500
+    
+    /**
+     Twilio will return this error code if a resource is currently unavailable. Please wait a few moments and then try the request again. We apologize for the inconvenience.
+     
+     If you are seeing a consistent pattern of 503 server errors coming from the Twilio API, check our status page for more details. If our status page has no information, contact support with details about the requests that are failing, and we will investigate.
+     
+     This error code indicates the request is safe to retry at a later time.
+     */
     case ServiceUnavailable = 20503
+    
 //    21100: Accounts Resource
 //    21200: Calls Resource
 //    21201: No 'To' number specified
