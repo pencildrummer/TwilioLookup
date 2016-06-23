@@ -1,7 +1,7 @@
 module: TwilioLookup
 author: Fabio Borella
 author_url: http://pencildrummer.com
-github_url: https://github.com/pencildrumer/TwilioLookup
+github_url: https://github.com/pencildrummer/TwilioLookup
 copyright: 2016 © Fabio Borella - Pencildrummer
 
 clean: false
