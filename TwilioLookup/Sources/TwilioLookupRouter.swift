@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import Alamofire
 
 internal enum TwilioLookupRouter: URLRequestConvertible {
@@ -28,7 +29,7 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
     private var requestURL: NSURL? {
         switch self {
         case .Lookup(let phoneNumber, _):
-            return baseURL.URLByAppendingPathComponent("PhoneNumbers").URLByAppendingPathComponent(phoneNumber).URLByAppendingPathComponent("/")
+            return baseURL.URLByAppendingPathComponent("PhoneNumbers")!.URLByAppendingPathComponent(phoneNumber)!.URLByAppendingPathComponent("/")
         }
     }
     

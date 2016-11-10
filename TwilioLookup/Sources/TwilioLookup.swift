@@ -98,18 +98,21 @@ public class TwilioLookup {
             .validate(statusCode: 200..<300)
             .responseObject { (response: Response<TwilioLookupResponse, NSError>) in
                 switch response.result {
-                case .Success:
-                    completion(response.result.value!, nil)
-                case .Failure:
+                case .Success(let result):
+                    completion(result, nil)
+                case .Failure(let error):
+                    if let urlError = error as? NSURLError {
+                        completion(nil, error)
+                    }
                     // Map error response to TwilioError
-                    if let errorJSON = String(data: response.data!, encoding: NSUTF8StringEncoding) {
+                    else if let errorJSON = String(data: response.data!, encoding: NSUTF8StringEncoding) {
                         if let twilioError = TwilioError(JSONString: errorJSON) {
                             completion(nil, twilioError)
                         } else {
-                            completion(nil, response.result.error!)
+                            completion(nil, error)
                         }
                     } else {
-                        completion(nil, response.result.error!)
+                        completion(nil, error)
                     }
                 }
         }
