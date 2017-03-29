@@ -13,37 +13,36 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
     
     fileprivate static let baseURL = "https://lookups.twilio.com/v1/"
     
-    case lookup(String, [String: AnyObject]?)
+    case lookup(String, [String: Any]?)
     
     fileprivate var baseURL: URL {
         return URL(string: TwilioLookupRouter.baseURL)!
     }
     
-    fileprivate var method: Alamofire.Method {
+    fileprivate var method: Alamofire.HTTPMethod {
         switch self {
         case .lookup(_, _):
-            return .GET
+            return .get
         }
     }
     
     fileprivate var requestURL: URL? {
         switch self {
         case .lookup(let phoneNumber, _):
-            return baseURL.appendingPathComponent("PhoneNumbers")!.appendingPathComponent(phoneNumber)!.appendingPathComponent("/")
+            return baseURL.appendingPathComponent("PhoneNumbers").appendingPathComponent(phoneNumber).appendingPathComponent("/")
         }
     }
     
-    fileprivate var parameters: [String: AnyObject]? {
+    fileprivate var parameters: [String: Any]? {
         switch self {
         case .lookup(_, let params):
             return params
         }
     }
     
-    var URLRequest: NSMutableURLRequest {
-        
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: requestURL!)
-        request.HTTPMethod = method.rawValue
+    func asURLRequest() throws -> URLRequest {
+        var request = URLRequest(url: requestURL!)
+        request.httpMethod = method.rawValue
         
         // Configure authorization
         
@@ -52,7 +51,7 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         
         // Configure parameters
         
-        return Alamofire.ParameterEncoding.URL.encode(request, parameters: parameters).0
+        return try Alamofire.JSONEncoding.default.encode(request, with: parameters)
     }
     
     fileprivate func basicAuthorizationHeader(_ sid: String, token: String) -> String {

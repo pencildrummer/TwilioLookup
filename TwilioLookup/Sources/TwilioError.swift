@@ -48,16 +48,16 @@ open class TwilioError: NSError, Mappable {
      */
     required public init?(map: Map) {
         super.init(domain: kTwilioErrorDomain,
-                   code: map.JSONDictionary["code"] as! Int,
+                   code: map.JSON["code"] as! Int,
                    userInfo: [
-                    NSLocalizedDescriptionKey : map.JSONDictionary["message"] as! String
+                    NSLocalizedDescriptionKey : map.JSON["message"] as! String
             ])
     }
     
     /** 
      Mapping function needed to conform to Mappable protocol
      */
-    open func mapping(_ map: Map) {
+    open func mapping(map: Map) {
         twilioDescription <- map["message"]
         moreInfoDescription <- map["more_info"]
         status <- map["status"]

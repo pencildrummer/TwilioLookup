@@ -60,8 +60,8 @@ open class TwilioLookup {
      
      - seealso: TwilioLookupResponse
      */
-    open class func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
-        sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
+    open static func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, Error?) -> ()) {
+        //TwilioLookup.sharedInstance().lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
     }
     
     // MARK: -
@@ -74,7 +74,7 @@ open class TwilioLookup {
     
     // MARK: Private implementations
     
-    fileprivate func lookup(_ phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+    internal func lookup(_ phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: @escaping (TwilioLookupResponse?, Error?) -> ()) {
         
         var parameters: [String: Any] = [:]
         
@@ -94,18 +94,18 @@ open class TwilioLookup {
             parameters["AddOns"] = addOnsUniqueNames
         }
         
-        Alamofire.request(TwilioLookupRouter.Lookup(phoneNumber, parameters))
+        Alamofire.request(TwilioLookupRouter.lookup(phoneNumber, parameters))
             .validate(statusCode: 200..<300)
-            .responseObject { (response: Response<TwilioLookupResponse, NSError>) in
+            .responseObject { (response: DataResponse<TwilioLookupResponse>) in
                 switch response.result {
-                case .Success(let result):
+                case .success(let result):
                     completion(result, nil)
-                case .Failure(let error):
-                    if let urlError = error as? NSURLError {
-                        completion(nil, error)
+                case .failure(let error):
+                    if let urlError = error as? URLError {
+                        completion(nil, urlError)
                     }
                     // Map error response to TwilioError
-                    else if let errorJSON = String(data: response.data!, encoding: NSUTF8StringEncoding) {
+                    else if let errorJSON = String(data: response.data!, encoding: String.Encoding.utf8) {
                         if let twilioError = TwilioError(JSONString: errorJSON) {
                             completion(nil, twilioError)
                         } else {
