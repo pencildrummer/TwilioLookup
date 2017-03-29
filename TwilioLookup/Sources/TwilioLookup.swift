@@ -16,7 +16,7 @@ import AlamofireObjectMapper
  
  To use TwilioLookup methods you need to set the `accountSid` and `accountToken` found in the Twilio console dashboard ([Twilio dashboard](https://www.twilio.com/console/sms/dashboard)).
  */
-public class TwilioLookup {
+open class TwilioLookup {
     
     // MARK: - Settings
     
@@ -25,7 +25,7 @@ public class TwilioLookup {
      
      You can find your account SID value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public class var accountSid: String? {
+    open class var accountSid: String? {
         set {
             sharedInstance.accountSid = newValue
         }
@@ -39,7 +39,7 @@ public class TwilioLookup {
      
      You can find your account Token value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public class var accountToken: String? {
+    open class var accountToken: String? {
         set {
             sharedInstance.accountToken = newValue
         }
@@ -60,21 +60,21 @@ public class TwilioLookup {
      
      - seealso: TwilioLookupResponse
      */
-    public class func lookup(phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+    open class func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
     }
     
     // MARK: -
     // MARK: Private vars
     
-    private static let sharedInstance = TwilioLookup()
+    fileprivate static let sharedInstance = TwilioLookup()
     
-    private var accountSid: String?
-    private var accountToken: String?
+    fileprivate var accountSid: String?
+    fileprivate var accountToken: String?
     
     // MARK: Private implementations
     
-    private func lookup(phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+    fileprivate func lookup(_ phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         
         var parameters: [String: AnyObject] = [:]
         

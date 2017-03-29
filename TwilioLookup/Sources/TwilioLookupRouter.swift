@@ -11,38 +11,38 @@ import Alamofire
 
 internal enum TwilioLookupRouter: URLRequestConvertible {
     
-    private static let baseURL = "https://lookups.twilio.com/v1/"
+    fileprivate static let baseURL = "https://lookups.twilio.com/v1/"
     
-    case Lookup(String, [String: AnyObject]?)
+    case lookup(String, [String: AnyObject]?)
     
-    private var baseURL: NSURL {
-        return NSURL(string: TwilioLookupRouter.baseURL)!
+    fileprivate var baseURL: URL {
+        return URL(string: TwilioLookupRouter.baseURL)!
     }
     
-    private var method: Alamofire.Method {
+    fileprivate var method: Alamofire.Method {
         switch self {
-        case .Lookup(_, _):
+        case .lookup(_, _):
             return .GET
         }
     }
     
-    private var requestURL: NSURL? {
+    fileprivate var requestURL: URL? {
         switch self {
-        case .Lookup(let phoneNumber, _):
-            return baseURL.URLByAppendingPathComponent("PhoneNumbers")!.URLByAppendingPathComponent(phoneNumber)!.URLByAppendingPathComponent("/")
+        case .lookup(let phoneNumber, _):
+            return baseURL.appendingPathComponent("PhoneNumbers")!.appendingPathComponent(phoneNumber)!.appendingPathComponent("/")
         }
     }
     
-    private var parameters: [String: AnyObject]? {
+    fileprivate var parameters: [String: AnyObject]? {
         switch self {
-        case .Lookup(_, let params):
+        case .lookup(_, let params):
             return params
         }
     }
     
     var URLRequest: NSMutableURLRequest {
         
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL!)
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: requestURL!)
         request.HTTPMethod = method.rawValue
         
         // Configure authorization
@@ -55,10 +55,10 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         return Alamofire.ParameterEncoding.URL.encode(request, parameters: parameters).0
     }
     
-    private func basicAuthorizationHeader(sid: String, token: String) -> String {
+    fileprivate func basicAuthorizationHeader(_ sid: String, token: String) -> String {
         let credentials = "\(sid):\(token)"
-        let credentialsData = credentials.dataUsingEncoding(NSUTF8StringEncoding)!
-        return "Basic \(credentialsData.base64EncodedStringWithOptions([]))"
+        let credentialsData = credentials.data(using: String.Encoding.utf8)!
+        return "Basic \(credentialsData.base64EncodedString(options: []))"
     }
     
 }
