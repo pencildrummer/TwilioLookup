@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'TwilioLookup/Sources/*.swift'
 
-  s.dependency 'Alamofire'
-  s.dependency 'AlamofireObjectMapper', '~> 3.0'
+  s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'AlamofireObjectMapper'
 
 end
