@@ -76,7 +76,7 @@ open class TwilioLookup {
     
     fileprivate func lookup(_ phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
         
-        var parameters: [String: AnyObject] = [:]
+        var parameters: [String: Any] = [:]
         
         if let countryCode = countryCode {
             parameters["CountryCode"] = countryCode

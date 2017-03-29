@@ -52,14 +52,14 @@ open class TwilioLookupResponse: NSObject, Mappable {
     /**
      Init method needed to conform to Mappable protocol
      */
-    required public init?(_ map: Map) {
+    required public init?(map: Map) {
         
     }
     
     /**
      Mapping function needed to conform to Mappable protocol
      */
-    open func mapping(_ map: Map) {
+    open func mapping(map: Map) {
         callerName <- map["caller_name"]
         countryCode <- map["country_code"]
         phoneNumber <- map["phone_number"]

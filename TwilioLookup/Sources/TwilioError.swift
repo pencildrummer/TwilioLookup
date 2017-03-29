@@ -46,7 +46,7 @@ open class TwilioError: NSError, Mappable {
     /** 
      Init method needed to conform to Mappable protocol
      */
-    required public init?(_ map: Map) {
+    required public init?(map: Map) {
         super.init(domain: kTwilioErrorDomain,
                    code: map.JSONDictionary["code"] as! Int,
                    userInfo: [
