@@ -51,7 +51,7 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         
         // Configure parameters
         
-        return try Alamofire.JSONEncoding.default.encode(request, with: parameters)
+        return try Alamofire.URLEncoding.default.encode(request, with: parameters)
     }
     
     fileprivate func basicAuthorizationHeader(_ sid: String, token: String) -> String {
