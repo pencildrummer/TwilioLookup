@@ -27,10 +27,10 @@ open class TwilioLookup {
      */
     open class var accountSid: String? {
         set {
-            sharedInstance.accountSid = newValue
+            shared.accountSid = newValue
         }
         get {
-            return sharedInstance.accountSid
+            return shared.accountSid
         }
     }
     
@@ -41,14 +41,28 @@ open class TwilioLookup {
      */
     open class var accountToken: String? {
         set {
-            sharedInstance.accountToken = newValue
+            shared.accountToken = newValue
         }
         get {
-            return sharedInstance.accountToken
+            return shared.accountToken
         }
     }
     
     // MARK: - Methods
+    
+    /*open class func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, Error?) -> ()) {
+        TwilioLookup.sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
+    }*/
+    
+    // MARK: -
+    // MARK: Private vars
+    
+    public static let shared = TwilioLookup()
+    
+    internal var accountSid: String?
+    internal var accountToken: String?
+    
+    // MARK: Implementations
     
     /**
      Use this method to lookup on Twilio for a certain phone number. You can also pass the country ISO code and the type.
@@ -60,21 +74,8 @@ open class TwilioLookup {
      
      - seealso: TwilioLookupResponse
      */
-    open static func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, Error?) -> ()) {
-        //TwilioLookup.sharedInstance().lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
-    }
     
-    // MARK: -
-    // MARK: Private vars
-    
-    fileprivate static let sharedInstance = TwilioLookup()
-    
-    fileprivate var accountSid: String?
-    fileprivate var accountToken: String?
-    
-    // MARK: Private implementations
-    
-    internal func lookup(_ phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: @escaping (TwilioLookupResponse?, Error?) -> ()) {
+    public func lookup(_ phoneNumber: String, countryCode: String?, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: @escaping (TwilioLookupResponse?, Error?) -> ()) {
         
         var parameters: [String: Any] = [:]
         
