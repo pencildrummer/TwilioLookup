@@ -16,7 +16,7 @@ import AlamofireObjectMapper
  
  To use TwilioLookup methods you need to set the `accountSid` and `accountToken` found in the Twilio console dashboard ([Twilio dashboard](https://www.twilio.com/console/sms/dashboard)).
  */
-public class TwilioLookup {
+open class TwilioLookup {
     
     // MARK: - Settings
     
@@ -25,12 +25,12 @@ public class TwilioLookup {
      
      You can find your account SID value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public class var accountSid: String? {
+    open class var accountSid: String? {
         set {
-            sharedInstance.accountSid = newValue
+            shared.accountSid = newValue
         }
         get {
-            return sharedInstance.accountSid
+            return shared.accountSid
         }
     }
     
@@ -39,16 +39,30 @@ public class TwilioLookup {
      
      You can find your account Token value in the [Twilio dashboard](https://www.twilio.com/console/sms/dashboard)
      */
-    public class var accountToken: String? {
+    open class var accountToken: String? {
         set {
-            sharedInstance.accountToken = newValue
+            shared.accountToken = newValue
         }
         get {
-            return sharedInstance.accountToken
+            return shared.accountToken
         }
     }
     
     // MARK: - Methods
+    
+    /*open class func lookup(_ phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, Error?) -> ()) {
+        TwilioLookup.sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
+    }*/
+    
+    // MARK: -
+    // MARK: Private vars
+    
+    public static let shared = TwilioLookup()
+    
+    internal var accountSid: String?
+    internal var accountToken: String?
+    
+    // MARK: Implementations
     
     /**
      Use this method to lookup on Twilio for a certain phone number. You can also pass the country ISO code and the type.
@@ -60,23 +74,10 @@ public class TwilioLookup {
      
      - seealso: TwilioLookupResponse
      */
-    public class func lookup(phoneNumber: String, countryCode: String? = nil, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: (TwilioLookupResponse?, NSError?) -> ()) {
-        sharedInstance.lookup(phoneNumber, countryCode: countryCode, type: type, addOns: addOns, completion: completion)
-    }
     
-    // MARK: -
-    // MARK: Private vars
-    
-    private static let sharedInstance = TwilioLookup()
-    
-    private var accountSid: String?
-    private var accountToken: String?
-    
-    // MARK: Private implementations
-    
-    private func lookup(phoneNumber: String, countryCode: String?, type: String?, addOns: [TwilioAddOn]?, completion: (TwilioLookupResponse?, NSError?) -> ()) {
+    public func lookup(_ phoneNumber: String, countryCode: String?, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: @escaping (TwilioLookupResponse?, Error?) -> ()) {
         
-        var parameters: [String: AnyObject] = [:]
+        var parameters: [String: Any] = [:]
         
         if let countryCode = countryCode {
             parameters["CountryCode"] = countryCode
@@ -94,18 +95,18 @@ public class TwilioLookup {
             parameters["AddOns"] = addOnsUniqueNames
         }
         
-        Alamofire.request(TwilioLookupRouter.Lookup(phoneNumber, parameters))
+        Alamofire.request(TwilioLookupRouter.lookup(phoneNumber, parameters))
             .validate(statusCode: 200..<300)
-            .responseObject { (response: Response<TwilioLookupResponse, NSError>) in
+            .responseObject { (response: DataResponse<TwilioLookupResponse>) in
                 switch response.result {
-                case .Success(let result):
+                case .success(let result):
                     completion(result, nil)
-                case .Failure(let error):
-                    if let urlError = error as? NSURLError {
-                        completion(nil, error)
+                case .failure(let error):
+                    if let urlError = error as? URLError {
+                        completion(nil, urlError)
                     }
                     // Map error response to TwilioError
-                    else if let errorJSON = String(data: response.data!, encoding: NSUTF8StringEncoding) {
+                    else if let errorJSON = String(data: response.data!, encoding: String.Encoding.utf8) {
                         if let twilioError = TwilioError(JSONString: errorJSON) {
                             completion(nil, twilioError)
                         } else {

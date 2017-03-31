@@ -11,39 +11,38 @@ import Alamofire
 
 internal enum TwilioLookupRouter: URLRequestConvertible {
     
-    private static let baseURL = "https://lookups.twilio.com/v1/"
+    fileprivate static let baseURL = "https://lookups.twilio.com/v1/"
     
-    case Lookup(String, [String: AnyObject]?)
+    case lookup(String, [String: Any]?)
     
-    private var baseURL: NSURL {
-        return NSURL(string: TwilioLookupRouter.baseURL)!
+    fileprivate var baseURL: URL {
+        return URL(string: TwilioLookupRouter.baseURL)!
     }
     
-    private var method: Alamofire.Method {
+    fileprivate var method: Alamofire.HTTPMethod {
         switch self {
-        case .Lookup(_, _):
-            return .GET
+        case .lookup(_, _):
+            return .get
         }
     }
     
-    private var requestURL: NSURL? {
+    fileprivate var requestURL: URL? {
         switch self {
-        case .Lookup(let phoneNumber, _):
-            return baseURL.URLByAppendingPathComponent("PhoneNumbers")!.URLByAppendingPathComponent(phoneNumber)!.URLByAppendingPathComponent("/")
+        case .lookup(let phoneNumber, _):
+            return baseURL.appendingPathComponent("PhoneNumbers").appendingPathComponent(phoneNumber).appendingPathComponent("/")
         }
     }
     
-    private var parameters: [String: AnyObject]? {
+    fileprivate var parameters: [String: Any]? {
         switch self {
-        case .Lookup(_, let params):
+        case .lookup(_, let params):
             return params
         }
     }
     
-    var URLRequest: NSMutableURLRequest {
-        
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL!)
-        request.HTTPMethod = method.rawValue
+    func asURLRequest() throws -> URLRequest {
+        var request = URLRequest(url: requestURL!)
+        request.httpMethod = method.rawValue
         
         // Configure authorization
         
@@ -52,13 +51,13 @@ internal enum TwilioLookupRouter: URLRequestConvertible {
         
         // Configure parameters
         
-        return Alamofire.ParameterEncoding.URL.encode(request, parameters: parameters).0
+        return try Alamofire.URLEncoding.default.encode(request, with: parameters)
     }
     
-    private func basicAuthorizationHeader(sid: String, token: String) -> String {
+    fileprivate func basicAuthorizationHeader(_ sid: String, token: String) -> String {
         let credentials = "\(sid):\(token)"
-        let credentialsData = credentials.dataUsingEncoding(NSUTF8StringEncoding)!
-        return "Basic \(credentialsData.base64EncodedStringWithOptions([]))"
+        let credentialsData = credentials.data(using: String.Encoding.utf8)!
+        return "Basic \(credentialsData.base64EncodedString(options: []))"
     }
     
 }

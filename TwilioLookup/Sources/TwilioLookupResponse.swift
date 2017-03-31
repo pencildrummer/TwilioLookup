@@ -15,7 +15,7 @@ import ObjectMapper
  - seealso: TwilioLookup
  - seealso: TwilioError
  */
-public class TwilioLookupResponse: NSObject, Mappable {
+open class TwilioLookupResponse: NSObject, Mappable {
     
     /** 
      String indicating the name of the owner of the phone number. If not available, this will return `nil`.
@@ -52,14 +52,14 @@ public class TwilioLookupResponse: NSObject, Mappable {
     /**
      Init method needed to conform to Mappable protocol
      */
-    required public init?(_ map: Map) {
+    required public init?(map: Map) {
         
     }
     
     /**
      Mapping function needed to conform to Mappable protocol
      */
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         callerName <- map["caller_name"]
         countryCode <- map["country_code"]
         phoneNumber <- map["phone_number"]

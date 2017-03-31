@@ -15,26 +15,26 @@ import ObjectMapper
  - seealso: TwilioLookup
  - seealso: TwilioLookupResponse
  */
-public class TwilioError: NSError, Mappable {
+open class TwilioError: NSError, Mappable {
     
     /**
      Twilio-specific error code.
      */
-    public var twilioCode: TwilioErrorCode! {
+    open var twilioCode: TwilioErrorCode! {
         return TwilioErrorCode(rawValue: UInt(code))
     }
     
     /** 
      Additional info to debug the error.
      */
-    public var moreInfoDescription: String!
+    open var moreInfoDescription: String!
     
     /** 
      The HTTP status code of the error response.
      */
-    public var status: UInt!
+    open var status: UInt!
     
-    private var twilioDescription: String!
+    fileprivate var twilioDescription: String!
     
     /**
      Init method required to subclass NSError
@@ -46,18 +46,18 @@ public class TwilioError: NSError, Mappable {
     /** 
      Init method needed to conform to Mappable protocol
      */
-    required public init?(_ map: Map) {
+    required public init?(map: Map) {
         super.init(domain: kTwilioErrorDomain,
-                   code: map.JSONDictionary["code"] as! Int,
+                   code: map.JSON["code"] as! Int,
                    userInfo: [
-                    NSLocalizedDescriptionKey : map.JSONDictionary["message"] as! String
+                    NSLocalizedDescriptionKey : map.JSON["message"] as! String
             ])
     }
     
     /** 
      Mapping function needed to conform to Mappable protocol
      */
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         twilioDescription <- map["message"]
         moreInfoDescription <- map["more_info"]
         status <- map["status"]
@@ -66,7 +66,7 @@ public class TwilioError: NSError, Mappable {
     /** 
      A string containing the localized description of the Twilio error. (read-only)
      */
-    public override var localizedDescription: String {
+    open override var localizedDescription: String {
         return twilioDescription
     }
     
@@ -78,35 +78,35 @@ let kTwilioErrorDomain = "com.pencildrummer.TwilioErrorDomain"
 /// Twilio error codes. For a complete list look the [Error Code Reference](https://www.twilio.com/docs/api/errors/reference).
 public enum TwilioErrorCode: UInt {
     /// 10001 - This account has been disabled and may not be used until it is reactivated.
-    case AccountIsNotActive = 10001
+    case accountIsNotActive = 10001
     /// 10002 - Your account is currently in Trial mode and does not have access to this feature.
-    case TrialAccountDoesNotSupportThisFeature = 10002
+    case trialAccountDoesNotSupportThisFeature = 10002
     /// 10003 - An incoming call was made to your application, but was not answered because your account was not active at the time.
-    case IncomingCallRejectedDueToInactiveAccount = 10003
+    case incomingCallRejectedDueToInactiveAccount = 10003
     /// 11100 - The format of the provided URL is invalid.
-    case InvalidURLFormat = 11100
+    case invalidURLFormat = 11100
     /// 11200 - There was a failure attempting to retrieve the contents of this URL. An 11200 error is an indicator of a connection failure between Twilio and your service.
-    case HTTPRetrievalFailure = 11200
+    case httpRetrievalFailure = 11200
     /// 11205 - There was a network failure attempting to connect to this URL
-    case HTTPConnectionFailure = 11205
+    case httpConnectionFailure = 11205
     /// 11206 - There was an error speaking HTTP to the target URL.
-    case HTTPProtocolViolation = 11206
+    case httpProtocolViolation = 11206
     /// 11210 - The DNS entry for the URL's host cannot be resolved.
-    case HTTPBadHostName = 11210
+    case httpBadHostName = 11210
     /// 11215 - This request has been redirected too many times and may be in a loop.
-    case HTTPTooManyRedirects = 11215
+    case httpTooManyRedirects = 11215
     /// 11220 - During SSL/TLS negotiation, Twilio experienced a connection reset.
-    case SSL_TLSHandshakeError = 11220
+    case ssl_TLSHandshakeError = 11220
     /// 11235 - Twilio tried to validate your SSL certificate but your certificate has a domain name that does not match the domain we requested.
-    case CertificateInvalid_DomainMismatch = 11235
+    case certificateInvalid_DomainMismatch = 11235
     /// 11236 - Twilio tried to validate your SSL certificate but your certificate has expired.
-    case CertificateInvalid_Certificate_Expired = 11236
+    case certificateInvalid_Certificate_Expired = 11236
     /// 11237 - Twilio tried to validate your SSL certificate but was unable to find it in our certificate store.
-    case CertificateInvalid_CouldNotFindPathToCertificate = 11237
+    case certificateInvalid_CouldNotFindPathToCertificate = 11237
     /// 11300 - The provided URL template has an invalid format. Please check to see if you have unclosed brackets.
-    case InvalidTemplateURL = 11300
+    case invalidTemplateURL = 11300
     /// 11310 - The provided URL template references a nonexistent token.
-    case InvalidTemplateToken = 11310
+    case invalidTemplateToken = 11310
 //    11320: Invalid template unclosed brackets
 //    11750: TwiML response body too large
 //    11751: MMS -> Media exceeds mobile operator size limit
@@ -248,7 +248,7 @@ public enum TwilioErrorCode: UInt {
 //    20107: Invalid Access Token signature
     
     /// 20403 - The account lacks permission to access the Twilio API. Typically this means the account has been suspended or closed. For assistance, please contact a help@twilio.com.
-    case Forbidden = 20403
+    case forbidden = 20403
     
     /**
      
@@ -287,7 +287,7 @@ public enum TwilioErrorCode: UInt {
      - Using a base URL that is not https://api.twilio.com. For example, making requests to https://twilio.com or https://www.twilio.com will not work.
      
      */
-    case NotFound = 20404
+    case notFound = 20404
     
     /**
      Your account is sending too many concurrent requests to the Twilio API. Please wait for a short period of time and make the request again, or alter your client's settings to issue fewer concurrent requests to the Twilio API.
@@ -296,7 +296,7 @@ public enum TwilioErrorCode: UInt {
      
      A 429 request is never processed and is always safe to retry.
      */
-    case TooManyRequests = 20429
+    case tooManyRequests = 20429
     
     /**
      The Twilio API encountered an error when processing your request. This generally indicates an error in the server handling logic or a timeout in the API. We apologize for the inconvenience.
@@ -307,7 +307,7 @@ public enum TwilioErrorCode: UInt {
      
      Other POST requests - sending an SMS or triggering an outbound call - are not idempotent. If you get a 500 Server Error on these requests, and you retry the request, it is possible for a customer to receive multiple messages or calls from your application.
      */
-    case InternalServerError = 20500
+    case internalServerError = 20500
     
     /**
      Twilio will return this error code if a resource is currently unavailable. Please wait a few moments and then try the request again. We apologize for the inconvenience.
@@ -316,7 +316,7 @@ public enum TwilioErrorCode: UInt {
      
      This error code indicates the request is safe to retry at a later time.
      */
-    case ServiceUnavailable = 20503
+    case serviceUnavailable = 20503
     
 //    21100: Accounts Resource
 //    21200: Calls Resource
