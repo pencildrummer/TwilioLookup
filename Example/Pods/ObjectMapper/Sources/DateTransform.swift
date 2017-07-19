@@ -1,12 +1,12 @@
 //
-//  URLTransform.swift
+//  DateTransform.swift
 //  ObjectMapper
 //
-//  Created by Tristan Himmelman on 2014-10-27.
+//  Created by Tristan Himmelman on 2014-10-13.
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,22 +28,27 @@
 
 import Foundation
 
-public class URLTransform: TransformType {
-	public typealias Object = NSURL
-	public typealias JSON = String
+open class DateTransform: TransformType {
+	public typealias Object = Date
+	public typealias JSON = Double
 
 	public init() {}
 
-	public func transformFromJSON(value: AnyObject?) -> NSURL? {
-		if let URLString = value as? String {
-			return NSURL(string: URLString)
+	open func transformFromJSON(_ value: Any?) -> Date? {
+		if let timeInt = value as? Double {
+			return Date(timeIntervalSince1970: TimeInterval(timeInt))
 		}
+		
+		if let timeStr = value as? String {
+			return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
+		}
+		
 		return nil
 	}
 
-	public func transformToJSON(value: NSURL?) -> String? {
-		if let URL = value {
-			return URL.absoluteString
+	open func transformToJSON(_ value: Date?) -> Double? {
+		if let date = value {
+			return Double(date.timeIntervalSince1970)
 		}
 		return nil
 	}
