@@ -12,35 +12,35 @@ class CountryCodesViewController: UITableViewController {
     
     var sourceController: ViewController?
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NSLocale.ISOCountryCodes().count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Locale.isoRegionCodes.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CountryCodeCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCodeCell", for: indexPath)
         
-        let countryCode = NSLocale.ISOCountryCodes()[indexPath.row]
+        let countryCode = Locale.isoRegionCodes[indexPath.row]
         
         cell.textLabel?.text = countryCode
         
         if sourceController?.currentCountryCode == countryCode {
-            cell.accessoryType = .Checkmark
+            cell.accessoryType = .checkmark
         } else {
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        sourceController?.currentCountryCode = NSLocale.ISOCountryCodes()[indexPath.row]
+        sourceController?.currentCountryCode = Locale.isoRegionCodes[indexPath.row]
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
