@@ -16,45 +16,45 @@ class ViewController: UIViewController {
         didSet {
             formatter = NBAsYouTypeFormatter(regionCode: currentCountryCode)
             
-            let prefix = NBPhoneNumberUtil.sharedInstance().getCountryCodeForRegion(currentCountryCode)
-            countryCodeButton.setTitle("\(currentCountryCode) +\(prefix)", forState: .Normal)
+            let prefix = NBPhoneNumberUtil.sharedInstance().getCountryCode(forRegion: currentCountryCode)
+            countryCodeButton.setTitle("\(currentCountryCode!) +\(String(describing: prefix!))", for: UIControlState())
         }
     }
     
     var formatter: NBAsYouTypeFormatter?
     
-    @IBOutlet private var countryCodeButton: UIButton!
-    @IBOutlet private var phoneTextField: UITextField!
-    @IBOutlet private var debugTextView: UITextView!
-    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet fileprivate var countryCodeButton: UIButton!
+    @IBOutlet fileprivate var phoneTextField: UITextField!
+    @IBOutlet fileprivate var debugTextView: UITextView!
+    @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
-    @IBAction func verifyPhoneNumber(sender: AnyObject) {
+    @IBAction func verifyPhoneNumber(_ sender: AnyObject) {
         let attributes = [
             NSFontAttributeName : UIFont(name: "Menlo-Bold", size: 10)!,
-            NSForegroundColorAttributeName : UIColor.darkGrayColor()
+            NSForegroundColorAttributeName : UIColor.darkGray
         ]
         self.debugTextView.attributedText = NSAttributedString(string: "Verifying...", attributes: attributes)
         
         activityIndicator.startAnimating()
         
-        TwilioLookup.lookup(phoneTextField.text!, countryCode: currentCountryCode) { (response, error) in
+        TwilioLookup.shared.lookup(phoneTextField.text!, countryCode: currentCountryCode) { (response, error) in
             
             self.activityIndicator.stopAnimating()
             
             if error == nil {
                 
-                debugPrint(response?.toJSONString(true))
-                self.debugTextView.attributedText = NSAttributedString(string: response!.toJSONString(true)!, attributes: attributes)
+                debugPrint(response?.toJSONString(prettyPrint: true) ?? "No JSONString response")
+                self.debugTextView.attributedText = NSAttributedString(string: response!.toJSONString(prettyPrint: true)!, attributes: attributes)
                 
             } else {
                 
-                self.debugTextView.attributedText = NSAttributedString(string: (error as! TwilioError).toJSONString(true)!, attributes: attributes)
+                self.debugTextView.attributedText = NSAttributedString(string: (error as! TwilioError).toJSONString(prettyPrint: true)!, attributes: attributes)
                 
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .Alert)
-                let closeAction = UIAlertAction(title: "Close", style: .Default, handler: nil)
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                let closeAction = UIAlertAction(title: "Close", style: .default, handler: nil)
                 alert.addAction(closeAction)
                 
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
             }
         }
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        currentCountryCode = NSLocale.componentsFromLocaleIdentifier(NSLocale.currentLocale().localeIdentifier)[NSLocaleCountryCode] ?? "US"
+        currentCountryCode = Locale.current.regionCode ?? "US"
         
         phoneTextField.delegate = self
     }
@@ -74,9 +74,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCountryCodes" {
-            (segue.destinationViewController as! CountryCodesViewController).sourceController = self
+            (segue.destination as! CountryCodesViewController).sourceController = self
         }
     }
 
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if range.length > 0 && string.characters.count == 0 && string == "" {
             textField.text = formatter?.removeLastDigit()

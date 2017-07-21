@@ -24,6 +24,10 @@ static NSMutableDictionary *kMapCCode2CN;
         [countryCode48Array addObject:@"PL"];
         [kMapCCode2CN setObject:countryCode48Array forKey:@"48"];
 
+        NSMutableArray *countryCode882Array = [[NSMutableArray alloc] init];
+        [countryCode882Array addObject:@"001"];
+        [kMapCCode2CN setObject:countryCode882Array forKey:@"882"];
+
         NSMutableArray *countryCode33Array = [[NSMutableArray alloc] init];
         [countryCode33Array addObject:@"FR"];
         [kMapCCode2CN setObject:countryCode33Array forKey:@"33"];
@@ -39,6 +43,10 @@ static NSMutableDictionary *kMapCCode2CN;
         NSMutableArray *countryCode64Array = [[NSMutableArray alloc] init];
         [countryCode64Array addObject:@"NZ"];
         [kMapCCode2CN setObject:countryCode64Array forKey:@"64"];
+
+        NSMutableArray *countryCode374Array = [[NSMutableArray alloc] init];
+        [countryCode374Array addObject:@"AM"];
+        [kMapCCode2CN setObject:countryCode374Array forKey:@"374"];
 
         NSMutableArray *countryCode800Array = [[NSMutableArray alloc] init];
         [countryCode800Array addObject:@"001"];
@@ -83,6 +91,10 @@ static NSMutableDictionary *kMapCCode2CN;
         NSMutableArray *countryCode82Array = [[NSMutableArray alloc] init];
         [countryCode82Array addObject:@"KR"];
         [kMapCCode2CN setObject:countryCode82Array forKey:@"82"];
+
+        NSMutableArray *countryCode290Array = [[NSMutableArray alloc] init];
+        [countryCode290Array addObject:@"TA"];
+        [kMapCCode2CN setObject:countryCode290Array forKey:@"290"];
 
         NSMutableArray *countryCode376Array = [[NSMutableArray alloc] init];
         [countryCode376Array addObject:@"AD"];
