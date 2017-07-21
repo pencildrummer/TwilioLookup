@@ -5,7 +5,7 @@ PODS:
     - ObjectMapper (~> 2.0)
   - libPhoneNumber-iOS (0.9.10)
   - ObjectMapper (2.2.8)
-  - TwilioLookup (1.1.0):
+  - TwilioLookup (1.1.1):
     - Alamofire (~> 4.0)
     - AlamofireObjectMapper
 
@@ -22,7 +22,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   libPhoneNumber-iOS: f721ae4d5854bce60934f9fb9b0b28e8e68913cb
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
-  TwilioLookup: dce227ca498b78fd3800d080577742d80f458c39
+  TwilioLookup: 6b2815c5b99790dde130d4d564ea82e207d7dcc7
 
 PODFILE CHECKSUM: dd4d708849079dbc6c9f8ef456a6bc7d3e8cd344
 
