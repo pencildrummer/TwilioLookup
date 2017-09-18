@@ -11,6 +11,9 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
+internal let kTwilioApiSIDKey = "TWApiSID"
+internal let kTwilioApiSecretKey = "TWApiSecret"
+
 /**
  Class used to lookup phone number using the Lookup feature of Twilio.
  
@@ -76,6 +79,18 @@ open class TwilioLookup {
      */
     
     public func lookup(_ phoneNumber: String, countryCode: String?, type: String? = nil, addOns: [TwilioAddOn]? = nil, completion: @escaping (TwilioLookupResponse?, Error?) -> ()) {
+        
+        // Verify configuration
+        
+        accountSid = accountSid ?? Bundle.main.infoDictionary?[kTwilioApiSIDKey] as? String
+        accountToken = accountToken ?? Bundle.main.infoDictionary?[kTwilioApiSecretKey] as? String
+        
+        guard let _ = accountSid else {
+            fatalError("ERROR: Missing accountSid or TWApiSID key in Info.plist")
+        }
+        guard let _ = accountToken else {
+            fatalError("ERROR: Missing accountToken or TWApiSecret key in Info.plist")
+        }
         
         var parameters: [String: Any] = [:]
         
